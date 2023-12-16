@@ -29,6 +29,15 @@ module.exports = {
         exclude: /node_modules/,
         use: ["babel-loader", "ts-loader"],
       },
+      {
+        test: /\.css?$/,
+        use: ["style-loader", "css-loader", "postcss-loader"],
+        exclude: ["/node_modules/"],
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        type: "asset/resource",
+      },
     ],
   },
   plugins: [
