@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+@layer base {
+  html,
+  body,
+  #root,
+  .app {
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue",
+      "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.nav_style {
+  @apply text-2xl font-light cursor-pointer transition duration-300 hover:text-secondary-gray;
+}
+
+.nav_selected {
+  @apply text-2xl text-primary-point font-light cursor-pointer;
+}
