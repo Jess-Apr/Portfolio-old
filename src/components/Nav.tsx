@@ -1,15 +1,14 @@
 import React from "react";
+import { useRecoilState } from "recoil";
+import { menuState } from "../recoil/atoms/menuState";
 import myPhoto from "../assets/images/myPhoto.png";
 import email from "../assets/images/email.png";
 import github from "../assets/images/github.png";
 import velog from "../assets/images/velog.png";
 
-interface NavProps {
-  menu: string;
-  setMenu: React.Dispatch<React.SetStateAction<string>>;
-}
+function Nav(): JSX.Element {
+  const [menu, setMenu] = useRecoilState(menuState);
 
-function Nav({ menu, setMenu }: NavProps): JSX.Element {
   return (
     <div className="w-1/5 h-screen bg-primary-nav absolute top-0 left-0 shadow-lg flex flex-wrap justify-center items-center text-black-font">
       <div className="w-2/3 flex flex-col">

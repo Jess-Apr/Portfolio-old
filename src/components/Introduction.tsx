@@ -1,0 +1,29 @@
+import React from "react";
+
+function Introduction(): JSX.Element {
+  return (
+    <div className="h-full flex flex-col justify-center">
+      <h2 className="text-3xl font-medium mb-9">
+        성장하는 것이 가장 즐거운 프론트엔드 개발자, 한재연입니다.
+      </h2>
+      <div className="text-xl flex flex-col gap-6">
+        <p className="leading-8">
+          단순히 지식을 배우는 것에만 만족하지 않고, 부족한 부분을 찾아나가는 것에 집중합니다.
+          새롭게 습득한 내용은 직접 프로젝트에 적용하거나 문제를 해결해보는 등 실질적인 경험을 통해
+          이해를 높이려 합니다.
+        </p>
+        <p className="leading-8">
+          또한, 읽기 쉽고 유지보수가 용이한 코드를 작성하기 위해 기존에 작성했던 코드를 다시
+          읽어보며 리팩토링 과정에도 꾸준히 노력하고 있습니다.
+        </p>
+        <p className="leading-8">
+          "노력은 배신하지 않는다"는 말이 저의 원동력이며, 어떤것이든 대충하지 않고 노력을 들여
+          꾸준히 성장하는 사람이 되고자 합니다. 배운 것을 바탕으로 더 효율적인 솔루션을 제시하는,
+          함께 일하고 싶은 개발자가 되겠습니다.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export default Introduction;
