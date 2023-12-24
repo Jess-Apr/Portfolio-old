@@ -14,6 +14,7 @@ module.exports = {
           fe: "#F1D3B3",
           be: "#E4E9BE",
           gray: "#8B8B8B",
+          lightGray: "#F3F1ED",
         },
         black: {
           font: "#444444",
@@ -26,6 +27,7 @@ module.exports = {
       spacing: {
         "3p": "3%",
         "5p": "5%",
+        "8p": "8%",
         39: "39px",
       },
     },

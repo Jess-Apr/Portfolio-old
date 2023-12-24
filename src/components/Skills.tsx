@@ -1,10 +1,10 @@
 import React from "react";
-import { feSkills } from "../assets/feSkills";
-import { beSkills } from "../assets/beSkills";
+import { feSkills } from "../assets/images/skills/feSkills";
+import { beSkills } from "../assets/images/skills/beSkills";
 
 function Skills(): JSX.Element {
   return (
-    <div className="h-full flex flex-col border-b-4 border-primary-point overflow-scroll">
+    <div className="h-full flex flex-col border-b-4 border-primary-point overflow-scroll mb-5p px-3">
       <div>
         <h2 className="text-3xl font-medium mt-3p mb-6">Front-End</h2>
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2">

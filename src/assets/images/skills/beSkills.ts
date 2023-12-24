@@ -1,6 +1,6 @@
-import node from "./images/skills/node.png";
-import express from "./images/skills/express.png";
-import mysql from "./images/skills/mysql.png";
+import node from "./node.png";
+import express from "./express.png";
+import mysql from "./mysql.png";
 
 export const beSkills = [
   {

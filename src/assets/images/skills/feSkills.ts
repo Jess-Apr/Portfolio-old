@@ -1,11 +1,11 @@
-import js from "./images/skills/js.png";
-import ts from "./images/skills/ts.png";
-import react from "./images/skills/react.png";
-import redux from "./images/skills/redux.png";
-import recoil from "./images/skills/recoil.png";
-import rq from "./images/skills/rq.png";
-import sc from "./images/skills/sc.png";
-import tailwind from "./images/skills/tailwind.png";
+import js from "./js.png";
+import ts from "./ts.png";
+import react from "./react.png";
+import redux from "./redux.png";
+import recoil from "./recoil.png";
+import rq from "./rq.png";
+import sc from "./sc.png";
+import tailwind from "./tailwind.png";
 
 export const feSkills = [
   {
@@ -44,8 +44,8 @@ export const feSkills = [
     desc: "스타일 컴포넌트를 만들어 css 작업을 할 수 있고, 동적 스타일링, 스타일 확장, 전역 스타일 등의 기능을 활용할 수 있습니다.",
   },
   {
-    img: react,
+    img: tailwind,
     title: "Tailwind CSS",
-    desc: "유틸리티 클래스를 조합하여 스타일링을 할 수 있습니다.",
+    desc: "유틸리티 클래스를 조합하거나 사용자 정의 유틸리티를 만들어 스타일링을 할 수 있습니다.",
   },
 ];

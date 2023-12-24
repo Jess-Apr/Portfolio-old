@@ -21,10 +21,46 @@
   }
 }
 
+.nav {
+  @apply hidden xl:w-1/5 xl:h-screen xl:bg-primary-nav xl:absolute xl:top-0 xl:left-0 xl:shadow-lg xl:flex xl:flex-wrap xl:justify-center xl:items-center xl:text-black-font;
+}
+
 .nav_style {
   @apply text-2xl font-light cursor-pointer transition duration-300 hover:text-secondary-gray;
 }
 
 .nav_selected {
   @apply text-2xl text-primary-point font-light cursor-pointer;
+}
+
+.header {
+  @apply absolute w-full h-14 bg-primary-nav shadow-sm flex justify-end items-center px-8p gap-5p text-xl text-black-font xl:hidden;
+}
+
+.project_tab_style {
+  @apply text-lg w-full py-2 text-center cursor-pointer transition duration-300 hover:bg-secondary-lightGray;
+}
+
+.project_tab_selected {
+  @apply text-lg w-full py-2 bg-secondary-menu text-center cursor-pointer;
+}
+
+.link {
+  @apply flex items-center gap-2 cursor-pointer mb-6;
+}
+
+.link_text {
+  @apply text-base underline hover:text-secondary-gray;
+}
+
+.skill_fe {
+  @apply px-3 py-0.5 rounded-sm bg-secondary-fe;
+}
+
+.skill_be {
+  @apply px-3 py-0.5 rounded-sm bg-secondary-be;
+}
+
+.slide {
+  @apply w-96 h-60 bg-primary-point;
 }

@@ -10,7 +10,7 @@ function Nav(): JSX.Element {
   const [menu, setMenu] = useRecoilState(menuState);
 
   return (
-    <div className="w-1/5 h-screen bg-primary-nav absolute top-0 left-0 shadow-lg flex flex-wrap justify-center items-center text-black-font">
+    <div className="nav">
       <div className="w-2/3 flex flex-col">
         <img src={myPhoto} className="max-w-60 max-w-60 rounded-full bg-white mt-10 mb-4" />
         <div className="flex flex-col mb-14">
