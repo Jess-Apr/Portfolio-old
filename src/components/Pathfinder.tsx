@@ -68,7 +68,7 @@ function Pathfinder(): JSX.Element {
             </ul>
           </li>
           <li className="list-disc list-inside">
-            Oauth2를 활용한 카카오톡과 깃허브 소셜 로그인 기능을 구현
+            Oauth2를 활용하여 카카오톡과 깃허브 소셜 로그인 기능 구현
             <ul className="flex flex-col gap-2 mt-2">
               <li className="list-circle list-inside pl-7">
                 회원가입 없이 서비스를 이용할 수 있게 하여 사용자 경험 개선
@@ -79,7 +79,7 @@ function Pathfinder(): JSX.Element {
             </ul>
           </li>
           <li className="list-disc list-inside">
-            서버에 중복 요청을 방지하기 위해 throttle 기능을 구현
+            서버에 중복 요청을 방지하기 위해 throttle 기능 구현
             <ul className="flex flex-col gap-2 mt-2">
               <li className="list-circle list-inside pl-7">
                 로그인, 게시글 작성 등 제출 버튼을 눌렀을 시 3초간 요청이 보내지지 않도록 로직 작성
