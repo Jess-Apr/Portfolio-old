@@ -30,6 +30,9 @@ module.exports = {
         "8p": "8%",
         39: "39px",
       },
+      listStyleType: {
+        circle: "circle",
+      },
     },
   },
   plugins: [],

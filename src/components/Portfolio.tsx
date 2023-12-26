@@ -19,18 +19,37 @@ function Portfolio(): JSX.Element {
           <li>개인 프로젝트입니다.</li>
         </ul>
       </div>
-      <div className="w-42 flex items-center gap-2 mb-6">
+      <div className="w-42 flex items-center gap-2 mb-8">
         {portfolioSkills.map((v) => (
           <div className="skill_fe">{v}</div>
         ))}
       </div>
       <div>
         <ul className="flex flex-col ml-3 mb-7 text-lg gap-3">
-          <li className="text-2xl font-medium">성장 경험</li>
-          <li className="list-disc list-inside">어쩌구 저쩌구</li>
-          <li className="list-disc list-inside">어쩌구 저쩌구</li>
-          <li className="list-disc list-inside">어쩌구 저쩌구</li>
-          <li className="list-disc list-inside">어쩌구 저쩌구</li>
+          <li className="text-2xl font-medium">주요 개발 내용</li>
+          <li className="list-disc list-inside">
+            반응형 디자인을 활용하여 다양한 디바이스와 화면 크기에 대응하는 웹페이지 구현
+            <ul className="flex flex-col gap-2 mt-2">
+              <li className="list-circle list-inside pl-7">
+                % 단위를 사용하여 각 컴포넌트의 틀 구성
+              </li>
+              <li className="list-circle list-inside pl-7">
+                화면이 일정 px 이하로 작아지면 grid의 column 수를 줄이고, 네비게이션 바 대신 헤더가
+                출력되도록 설정
+              </li>
+            </ul>
+          </li>
+          <li className="list-disc list-inside">
+            GitHub Actions와 AWS S3를 사용하여 배포 자동화를 구현
+            <ul className="flex flex-col gap-2 mt-2">
+              <li className="list-circle list-inside pl-7">
+                Github에 코드를 push하면 자동으로 배포 진행
+              </li>
+              <li className="list-circle list-inside pl-7">
+                배포 작업을 진행하지 않아도 지속적으로 웹사이트의 최신 상태 유지
+              </li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
