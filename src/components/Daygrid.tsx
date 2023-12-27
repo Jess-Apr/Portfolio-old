@@ -109,6 +109,10 @@ function Daygrid(): JSX.Element {
                 Access token의 유효기간을 줄이고, refresh token은 access token의 만료시에만 서버로
                 전송하여 CSRF 공격 위험을 낮춤
               </li>
+              <li className="list-circle list-inside pl-7">
+                Axios 인터셉터를 사용하여 요청마다 access token을 자동으로 삽입하고, 토큰 만료 시
+                refresh token으로 토큰 재발급을 받을 수 있도록 함
+              </li>
             </ul>
           </li>
         </ul>

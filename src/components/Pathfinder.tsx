@@ -71,10 +71,10 @@ function Pathfinder(): JSX.Element {
             Oauth2를 활용하여 카카오톡과 깃허브 소셜 로그인 기능 구현
             <ul className="flex flex-col gap-2 mt-2">
               <li className="list-circle list-inside pl-7">
-                회원가입 없이 서비스를 이용할 수 있게 하여 사용자 경험 개선
+                타 플랫폼 서버를 경유하여 access token을 받아온 후, 유저 인증 프로세스 진행
               </li>
               <li className="list-circle list-inside pl-7">
-                타 플랫폼 서버를 경유하는 인증방식을 이해하게 됨
+                회원가입 없이 서비스를 이용할 수 있게 하여 사용자 경험 개선
               </li>
             </ul>
           </li>
@@ -88,6 +88,17 @@ function Pathfinder(): JSX.Element {
                 이후, 사용자 경험을 개선하기 위해 사용자에게 작업이 진행되고 있다는 것을 알려줄 수
                 있도록 응답이 돌아올때까지 로딩 이미지를 출력하여 요청 버튼 클릭이 불가능하도록 코드
                 수정
+              </li>
+            </ul>
+          </li>
+          <li className="list-disc list-inside">
+            유저 정보 입력 또는 수정 시 react-hook-form 라이브러리 사용
+            <ul className="flex flex-col gap-2 mt-2">
+              <li className="list-circle list-inside pl-7">
+                state 값의 개수를 줄여 입력 정보가 변할 때 리렌더링이 발생하는 횟수를 줄임
+              </li>
+              <li className="list-circle list-inside pl-7">
+                state 값을 바꾸기 위한 코드가 삭제되어 전체적인 코드의 양을 줄어듦
               </li>
             </ul>
           </li>
