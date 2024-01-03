@@ -14,7 +14,7 @@ module.exports = {
           fe: "#F1D3B3",
           be: "#E4E9BE",
           gray: "#8B8B8B",
-          lightGray: "#F3F1ED",
+          lightGray: "#F0EFEC",
         },
         black: {
           font: "#444444",
@@ -42,50 +42,30 @@ module.exports = {
           "0%": { transform: "translateY(-100%)" },
           "100%": { transform: "translateY(0)" },
         },
-        skillmenuup: {
-          "0%": { transform: "translateY(39%)" },
-          "100%": { transform: "translateY(0)" },
-        },
-        skillmenudown: {
-          "0%": { transform: "translateY(-39%)" },
-          "100%": { transform: "translateY(0)" },
-        },
-        projectmenuup: {
-          "0%": { transform: "translateY(70%)" },
-          "100%": { transform: "translateY(0)" },
-        },
-        projectmenudown: {
-          "0%": { transform: "translateY(-75%)" },
-          "100%": { transform: "translateY(0)" },
-        },
-        menudown: {
-          "0%": { transform: "translateY(-32%)" },
-          "100%": { transform: "translateY(-15%)" },
-        },
-        borderon: {
-          "0%": { transform: "scaleX(0)" },
-          "100%": { transform: "scaleX(1)" },
-        },
-        rotatearrowup: {
+        rotateArrowUp: {
           "0%": { transform: "rotate(0)" },
           "100%": { transform: "rotate(-180deg)" },
         },
-        rotatearrowdown: {
+        rotateArrowDown: {
           "0%": { transform: "rotate(-180deg)" },
           "100%": { transform: "rotate(0)" },
+        },
+        showMenu: {
+          "0%": { transform: "opacity(0)" },
+          "100%": { transform: "opacity(100%)" },
+        },
+        hideMenu: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
         },
       },
       animation: {
         dropdown: "dropdown 0.5s ease-in-out",
         dragup: "dragup 0.5s ease-in-out",
-        skillmenuup: "skillmenuup 0.5s ease-in-out",
-        skillmenudown: "skillmenudown 0.5s ease-in-out",
-        projectmenuup: "projectmenuup 0.5s ease-in-out",
-        projectmenudown: "projectmenudown 0.5s ease-in-out",
-        menudown: "menudown 0.5s ease-in-out",
-        borderon: "borderon 0.3s ease-in-out",
-        rotatearrowup: "rotatearrowup 0.5s ease-in-out",
-        rotatearrowdown: "rotatearrowdown 0.5s ease-in-out",
+        rotateArrowUp: "rotateArrowUp 0.5s ease-in-out",
+        rotateArrowDown: "rotateArrowDown 0.5s ease-in-out",
+        showMenu: "showMenu 0.5s ease-in-out",
+        hideMenu: "hideMenu 0.5s ease-in-out",
       },
     },
   },

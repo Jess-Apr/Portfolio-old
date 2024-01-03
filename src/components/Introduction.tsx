@@ -2,7 +2,7 @@ import React from "react";
 
 function Introduction(): JSX.Element {
   return (
-    <div className="h-full flex flex-col justify-center border-b-4 border-primary-point mb-5p px-3">
+    <div className="flex flex-col mb-5p px-3 py-5 border-b-4 border-primary-point pb-5 md:h-full md:justify-center">
       <h2 className="text-3xl font-medium mb-9">
         성장하는 것이 가장 즐거운 프론트엔드 개발자, 한재연입니다.
       </h2>

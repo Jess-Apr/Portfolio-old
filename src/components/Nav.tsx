@@ -34,9 +34,9 @@ function Nav(): JSX.Element {
               <p className="text-3xl">한재연</p>
             </div>
           </div>
-          <div className={menu === "project" ? "flex flex-col gap-4" : "flex flex-col gap-7"}>
+          <div className="flex flex-col">
             <p
-              className={menu === "intro" ? "nav_selected" : "nav_style"}
+              className={menu === "intro" ? "nav_selected mb-7" : "nav_style mb-7"}
               onClick={() => {
                 setPrev(menu);
                 setMenu("intro");
@@ -45,17 +45,7 @@ function Nav(): JSX.Element {
               Introduction
             </p>
             <p
-              className={
-                menu === "skill" && prev === "project"
-                  ? "nav_selected animate-skillmenudown"
-                  : menu === "skill" && prev !== "project"
-                  ? "nav_selected"
-                  : menu === "intro" && prev === "project"
-                  ? "nav_style animate-skillmenudown"
-                  : menu === "project" && prev !== "project"
-                  ? "nav_style animate-skillmenuup"
-                  : "nav_style"
-              }
+              className={menu === "skill" ? "nav_selected mb-7" : "nav_style mb-7"}
               onClick={() => {
                 setPrev(menu);
                 setMenu("skill");
@@ -65,11 +55,9 @@ function Nav(): JSX.Element {
             </p>
             <div
               className={
-                menu !== "project" && prev !== "project"
-                  ? "flex justify-between items-center nav_style"
-                  : menu === "project"
-                  ? "flex justify-between items-center nav_selected animate-projectmenuup"
-                  : "flex justify-between items-center nav_style animate-projectmenudown"
+                menu === "project"
+                  ? "flex justify-between items-center nav_selected mb-4"
+                  : "flex justify-between items-center nav_style mb-4"
               }
               onClick={() => {
                 setPrev(menu);
@@ -81,18 +69,14 @@ function Nav(): JSX.Element {
                 src={downArrow}
                 className={
                   menu === "project"
-                    ? "transform rotate-180 animate-rotatearrowup"
+                    ? "transform rotate-180 animate-rotateArrowUp"
                     : prev !== "project"
                     ? ""
-                    : "animate-rotatearrowdown"
+                    : "animate-rotateArrowDown"
                 }
               />
             </div>
-            <div
-              className={`${menu !== "project" && prev === "project" ? "animate-menudown" : ""} ${
-                visibilityAnimation ? "overflow-hidden" : "hidden"
-              }`}
-            >
+            <div className={visibilityAnimation ? "overflow-hidden" : "hidden"}>
               <div
                 className={
                   menu === "project"
@@ -104,7 +88,7 @@ function Nav(): JSX.Element {
                   className={
                     project === "por"
                       ? "w-full h-full px-2 py-3p bg-secondary-menu cursor-pointer"
-                      : "w-full h-full px-2 py-3p transition duration-200 hover:bg-secondary-lightGray cursor-pointer"
+                      : "w-full h-full px-2 py-3p transition duration-300 hover:bg-secondary-lightGray cursor-pointer"
                   }
                   onClick={() => setProject("por")}
                 >
@@ -114,7 +98,7 @@ function Nav(): JSX.Element {
                   className={
                     project === "day"
                       ? "w-full h-full px-2 py-3p bg-secondary-menu cursor-pointer"
-                      : "w-full h-full px-2 py-3p transition duration-200 hover:bg-secondary-lightGray cursor-pointer"
+                      : "w-full h-full px-2 py-3p transition duration-300 hover:bg-secondary-lightGray cursor-pointer"
                   }
                   onClick={() => setProject("day")}
                 >
@@ -124,7 +108,7 @@ function Nav(): JSX.Element {
                   className={
                     project === "pat"
                       ? "w-full h-full px-2 py-3p bg-secondary-menu cursor-pointer"
-                      : "w-full h-full px-2 py-3p transition duration-200 hover:bg-secondary-lightGray cursor-pointer"
+                      : "w-full h-full px-2 py-3p transition duration-300 hover:bg-secondary-lightGray cursor-pointer"
                   }
                   onClick={() => setProject("pat")}
                 >

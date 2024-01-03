@@ -9,8 +9,8 @@ function Projects(): JSX.Element {
   const [project, setproject] = useRecoilState(projectState);
 
   return (
-    <div className="flex flex-col">
-      <div className="border-b-4 border-primary-point mb-5p">
+    <div className="flex flex-col mb-5p border-b-4 border-primary-point pb-5">
+      <div>
         <div className="border-b-4 border-primary-point">
           <h1 className="text-4xl font-medium tracking-wide mb-4">
             {project === "por"
