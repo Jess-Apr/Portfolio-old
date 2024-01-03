@@ -7,46 +7,46 @@ import { pathfinderSkills } from "../assets/images/skills/projectSkills";
 function Pathfinder(): JSX.Element {
   return (
     <div className="flex flex-col px-3">
-      <h1 className="text-3xl font-medium mt-6 mb-2">여행 커뮤니티 웹 사이트</h1>
-      <div className="flex items-center gap-6">
-        <a href="https://github.com/Jess-Apr/Pathfinder" target="_blank" className="link">
-          <img src={github} className="w-5 h-5" />
-          <span className="link_text">Github 링크</span>
-        </a>
-        <a
-          href="http://seb45-main-020.s3-website.ap-northeast-2.amazonaws.com/"
-          target="_blank"
-          className="link"
-        >
-          <img src={link} className="w-5 h-5" />
-          <span className="link_text">Demo 링크</span>
-        </a>
+      <div className="flex flex-col md:flex-row md:gap-6 md:items-center">
+        <div className="flex flex-row gap-6">
+          <a href="https://github.com/Jess-Apr/Pathfinder" target="_blank" className="link">
+            <img src={github} className="w-5 h-5" />
+            <span className="link_text">Github 링크</span>
+          </a>
+          <a
+            href="http://seb45-main-020.s3-website.ap-northeast-2.amazonaws.com/"
+            target="_blank"
+            className="link"
+          >
+            <img src={link} className="w-5 h-5" />
+            <span className="link_text">Demo 링크</span>
+          </a>
+        </div>
+        <span>Test 계정 - Id: test@test.com | Password: 12341234</span>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2">
-        <Slider />
-        <ul className="flex flex-col gap-3 ml-3 mb-5 md:gap-3">
-          <li>
-            여행 경험과 사진을 글로 남겨 사람들과 공유할 수 있고, 유저 추천 기능 또는 랜덤 추천
-            기능을 통해 국내 여행지를 추천받을 수 있습니다.
-          </li>
-          <li className="list-disc list-inside">프로젝트 기간: 2023.09 ~ 2023.10</li>
+      <Slider />
+      <h2 className="text-2xl font-medium mt-6 mb-4">프로젝트 소개</h2>
+      <div className="flex flex-col text-lg gap-3 mb-5 md:gap-5">
+        <div>
+          여행 경험과 사진을 글로 남겨 사람들과 공유할 수 있고, 유저 추천 기능 또는 랜덤 추천 기능을
+          통해 국내 여행지를 추천받을 수 있는 여행 커뮤니티 사이트 입니다.
+        </div>
+        <div>프로젝트 기간: 2023.09 ~ 2023.10</div>
+        <ul>
           <li className="list-disc list-inside">참여 인원: 6명 (FE 3명, BE 3명)</li>
-          <li className="list-disc list-inside mb-1">역할: 프론트엔드 개발</li>
-          <div>
-            테스트계정
-            <li className="list-disc list-inside">Id: test@test.com</li>
-            <li className="list-disc list-inside">Password: 12341234</li>
-          </div>
+          <li className="list-disc list-inside">역할: 프론트엔드 개발</li>
         </ul>
       </div>
       <div className="w-42 flex items-center gap-2 mb-8">
-        {pathfinderSkills.map((v) => (
-          <div className="skill_fe">{v}</div>
+        {pathfinderSkills.map((v, i) => (
+          <div className="skill_fe" key={i}>
+            {v}
+          </div>
         ))}
       </div>
       <div>
+        <h2 className="text-2xl font-medium my-4">구현 기능</h2>
         <ul className="flex flex-col ml-3 mb-7 text-lg">
-          <li className="text-2xl font-medium mb-2">구현 기능</li>
           <li className="list-disc list-inside">로그인 페이지, 회원가입 페이지, 마이페이지</li>
           <li className="list-disc list-inside">댓글 CRUD 기능</li>
           <li className="list-disc list-inside">JWT 토큰을 이용하여 사용자 인증 진행</li>

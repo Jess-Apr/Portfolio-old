@@ -58,16 +58,12 @@ function Slider(): JSX.Element {
   };
 
   return (
-    <div className="w-4/5 flex justify-center items-center mx-auto mb-10">
+    <div className="w-4/5 flex justify-center items-center mx-auto mt-2 mb-10">
       <SimpleSlider {...settings}>
         {projectImg.map((v, i) => (
-          <div className="w-96 h-60">
+          <div className="h-80" key={i}>
             <div className="w-full h-full flex justify-center align-center" key={i}>
-              <img
-                src={v.img}
-                alt={v.alt}
-                className="max-w-96 max-h-60 m-auto border border-font-black"
-              />
+              <img src={v.img} alt={v.alt} className="max-h-80 m-auto border border-font-black" />
             </div>
           </div>
         ))}

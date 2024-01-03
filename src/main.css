@@ -50,11 +50,11 @@
 }
 
 .link {
-  @apply flex items-center gap-2 cursor-pointer mb-6;
+  @apply flex items-center gap-2 cursor-pointer my-4;
 }
 
 .link_text {
-  @apply text-base underline hover:text-secondary-gray;
+  @apply text-lg underline hover:text-secondary-gray;
 }
 
 .skill_fe {

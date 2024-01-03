@@ -7,53 +7,55 @@ import { daygridFe, daygridBe } from "../assets/images/skills/projectSkills";
 function Daygrid(): JSX.Element {
   return (
     <div className="flex flex-col px-3">
-      <h1 className="text-3xl font-medium mt-6 mb-2">캘린더 웹 어플리케이션</h1>
-      <div className="flex items-center gap-6">
-        <a href="https://github.com/Jess-Apr/DayGrid" target="_blank" className="link">
-          <img src={github} className="w-5 h-5" />
-          <span className="link_text">Github 링크</span>
-        </a>
-        <a
-          href="http://daygrid.s3-website.ap-northeast-2.amazonaws.com/info"
-          target="_blank"
-          className="link"
-        >
-          <img src={link} className="w-5 h-5" />
-          <span className="link_text">Demo 링크</span>
-        </a>
+      <div className="flex flex-col md:flex-row md:gap-6 md:items-center">
+        <div className="flex flex-row gap-6">
+          <a href="https://github.com/Jess-Apr/DayGrid" target="_blank" className="link">
+            <img src={github} className="w-5 h-5" />
+            <span className="link_text">Github 링크</span>
+          </a>
+          <a
+            href="http://daygrid.s3-website.ap-northeast-2.amazonaws.com/info"
+            target="_blank"
+            className="link"
+          >
+            <img src={link} className="w-5 h-5" />
+            <span className="link_text">Demo 링크</span>
+          </a>
+        </div>
+        <span>Test 계정 - Id: test@test.com | Password: 12341234</span>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2">
-        <Slider />
-        <ul className="flex flex-col gap-3 ml-3 mb-5 md:gap-3">
-          <li>
-            달력에 일정을 남기거나 디데이 설정을 하여 일정 관리를 할 수 있고, 원하는 날짜에
-            다이어리를 작성할 수도 있습니다.
-          </li>
-          <li className="list-disc list-inside">프로젝트 기간: 2023.10 ~ 2023.11</li>
+      <Slider />
+      <h2 className="text-2xl font-medium mt-6 mb-4">프로젝트 소개</h2>
+      <div className="flex flex-col text-lg gap-3 mb-5 md:gap-5">
+        <div>
+          달력에 일정을 남기거나 디데이 설정을 하여 일정 관리를 할 수 있고, 원하는 날짜에 다이어리를
+          작성하여 기록할 수 있는 캘린더 웹 어플리케이션 입니다.
+        </div>
+        <div>프로젝트 기간: 2023.10 ~ 2023.11</div>
+        <ul>
           <li className="list-disc list-inside">참여 인원: 2명</li>
-          <li className="list-disc list-inside mb-1">역할: 풀스택 개발</li>
-          <div>
-            테스트계정
-            <li className="list-disc list-inside">Id: test@test.com</li>
-            <li className="list-disc list-inside">Password: 12341234</li>
-          </div>
+          <li className="list-disc list-inside">역할: 프론트엔드 개발</li>
         </ul>
       </div>
       <div className="flex flex-col gap-2">
         <div className="w-42 flex items-center gap-2">
-          {daygridFe.map((v) => (
-            <div className="skill_fe">{v}</div>
+          {daygridFe.map((v, i) => (
+            <div className="skill_fe" key={i}>
+              {v}
+            </div>
           ))}
         </div>
         <div className="w-42 flex items-center gap-2 mb-8">
-          {daygridBe.map((v) => (
-            <div className="skill_be">{v}</div>
+          {daygridBe.map((v, i) => (
+            <div className="skill_be" key={i}>
+              {v}
+            </div>
           ))}
         </div>
       </div>
       <div>
+        <h2 className="text-2xl font-medium my-4">구현 기능</h2>
         <ul className="flex flex-col ml-3 mb-7 text-lg">
-          <li className="text-2xl font-medium mb-2">구현 기능</li>
           <li className="list-disc list-inside">달력 페이지, 마이페이지</li>
           <li className="list-disc list-inside">일정 CRUD 기능을 위한 api 작성</li>
           <li className="list-disc list-inside">회원 정보 CRUD 기능을 위한 api 작성</li>
@@ -87,7 +89,7 @@ function Daygrid(): JSX.Element {
                 쿼리문 작성
               </li>
               <li className="list-circle list-inside pl-7">
-                사용자 입력값을 쿼리문에 직접 삽입하는 상황을 없애 SQL 인젝션 공격 방지
+                사용자 입력값이 쿼리문에 직접적으로 삽입되지 않도록 하여 SQL 인젝션 공격 방지
               </li>
             </ul>
           </li>

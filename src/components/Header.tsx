@@ -27,7 +27,7 @@ function Header(): JSX.Element {
       >
         Skills
       </p>
-      <p
+      <div
         className="relative"
         onClick={() => {
           setMenu("project");
@@ -40,7 +40,7 @@ function Header(): JSX.Element {
         <div
           className={
             menuOpen
-              ? "absolute top-12 px-7 py-4 text-2xl font-light rounded-lg bg-primary-nav shadow-md"
+              ? "absolute top-12 px-7 py-4 text-2xl font-light rounded-lg bg-primary-nav shadow-md z-20"
               : "hidden"
           }
         >
@@ -63,7 +63,7 @@ function Header(): JSX.Element {
             Pathfinder
           </p>
         </div>
-      </p>
+      </div>
     </div>
   );
 }
