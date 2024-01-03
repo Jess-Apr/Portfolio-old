@@ -10,11 +10,13 @@ function MainPage(): JSX.Element {
 
   return (
     <div className="w-full bg-primary-bg flex justify-center pt-14 xl:w-4/5 xl:pt-0">
-      <div className="w-5/6 flex flex-col justiy-center pt-5p">
-        <div className="border-b-4 border-primary-point">
-          <h1 className="text-4xl font-medium tracking-wide mb-3">
-            {menu === "intro" ? "Introduction" : menu === "skill" ? "Skills" : "Projects"}
-          </h1>
+      <div className="w-5/6 flex flex-col justiy-center pt-5p overflow-scroll">
+        <div className={menu === "project" ? "" : "border-b-4 border-primary-point"}>
+          {menu === "intro" ? (
+            <h1 className="text-4xl font-medium tracking-wide mb-4">Introduction</h1>
+          ) : menu === "skill" ? (
+            <h1 className="text-4xl font-medium tracking-wide mb-4">Skills</h1>
+          ) : null}
         </div>
         {menu === "intro" ? <Introduction /> : menu === "skill" ? <Skills /> : <Projects />}
       </div>

@@ -9,28 +9,19 @@ function Projects(): JSX.Element {
   const [project, setproject] = useRecoilState(projectState);
 
   return (
-    <div className="h-full flex flex-col mt-2 mb-5p border-b-4 border-primary-point overflow-scroll">
-      <div className="grid grid-cols-3 mb-2">
-        <div
-          className={project === "por" ? "project_tab_selected" : "project_tab_style"}
-          onClick={() => setproject("por")}
-        >
-          Portfolio Page
+    <div className="flex flex-col">
+      <div className="border-b-4 border-primary-point mb-5p">
+        <div className="border-b-4 border-primary-point">
+          <h1 className="text-4xl font-medium tracking-wide mb-4">
+            {project === "por"
+              ? "Project - Portfolio"
+              : project === "day"
+              ? "Project - DayGrid"
+              : "Project - Pathfinder"}
+          </h1>
         </div>
-        <div
-          className={project === "day" ? "project_tab_selected" : "project_tab_style"}
-          onClick={() => setproject("day")}
-        >
-          DayGrid
-        </div>
-        <div
-          className={project === "pat" ? "project_tab_selected" : "project_tab_style"}
-          onClick={() => setproject("pat")}
-        >
-          Pathfinder
-        </div>
+        {project === "por" ? <Portfolio /> : project === "day" ? <Daygrid /> : <Pathfinder />}
       </div>
-      {project === "por" ? <Portfolio /> : project === "day" ? <Daygrid /> : <Pathfinder />}
     </div>
   );
 }
