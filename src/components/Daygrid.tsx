@@ -130,10 +130,6 @@ function Daygrid(): JSX.Element {
                 이해한 부분에서 충돌되는 것이 없도록 규칙을 정하고 상세하게 문서로 기록함
               </li>
               <li className="list_circle_style pl-7">
-                코드에 문제가 생겼을 시 서로의 코드를 더 쉽게 이해하여 문제를 더 빠르게 해결할 수
-                있었음
-              </li>
-              <li className="list_circle_style pl-7">
                 현재 진행하고 있는 작업은 프로젝트 레포지토리 칸반 보드에 기록. 깃허브 커밋 내역과
                 칸반 보드를 통해 서로의 작업 내용을 알고 효율적으로 작업할 수 있었음.
               </li>
