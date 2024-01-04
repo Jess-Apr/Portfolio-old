@@ -68,3 +68,11 @@
 .slide {
   @apply w-96 h-60 bg-primary-point;
 }
+
+.list_disc_style {
+  @apply list-disc ml-2;
+}
+
+.list_circle_style {
+  @apply list-circle ml-5;
+}

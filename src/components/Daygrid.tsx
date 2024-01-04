@@ -32,9 +32,9 @@ function Daygrid(): JSX.Element {
           작성하여 기록할 수 있는 캘린더 웹 어플리케이션 입니다.
         </div>
         <div>프로젝트 기간: 2023.10 ~ 2023.11</div>
-        <ul>
-          <li className="list-disc list-inside">참여 인원: 2명</li>
-          <li className="list-disc list-inside">역할: 프론트엔드 개발</li>
+        <ul className="ml-2">
+          <li className="list_disc_style">참여 인원: 2명</li>
+          <li className="list_disc_style">역할: 프론트엔드 개발</li>
         </ul>
       </div>
       <div className="flex flex-col gap-2">
@@ -54,66 +54,97 @@ function Daygrid(): JSX.Element {
         </div>
       </div>
       <div>
-        <h2 className="text-2xl font-medium my-4">구현 기능</h2>
-        <ul className="flex flex-col ml-3 mb-7 text-lg">
-          <li className="list-disc list-inside">달력 페이지, 마이페이지</li>
-          <li className="list-disc list-inside">일정 CRUD 기능을 위한 api 작성</li>
-          <li className="list-disc list-inside">회원 정보 CRUD 기능을 위한 api 작성</li>
-          <li className="list-disc list-inside">
-            Access token, refresh token을 이용한 사용자 인증 로직
-          </li>
-          <li className="list-disc list-inside">데이터베이스 스키마 설계 및 구축</li>
-        </ul>
+        <h2 className="text-2xl font-medium my-4">내가 기여한 부분</h2>
         <ul className="flex flex-col ml-3 mb-7 text-lg gap-3">
-          <li className="text-2xl font-medium">주요 개발 내용</li>
-          <li className="list-disc list-inside">
-            Node.js와 Express를 통해 서버 환경 구축
+          <li className="list_disc_style">
+            달력 페이지, 마이페이지
             <ul className="flex flex-col gap-2 mt-2">
-              <li className="list-circle list-inside pl-7">
+              <li className="list_circle_style pl-7">
+                클라이언트 상태값은 Redux를 사용하여 전역 상태로 관리
+                <ul className="flex flex-col gap-2 mt-2">
+                  <li className="list_circle_style pl-7">
+                    분리되어 있는 달력 컴포넌트끼리 날짜 상태를 바로 공유할 수 있어 props drilling을
+                    방지하고, 상태 추적이 용이해짐
+                  </li>
+                </ul>
+              </li>
+              <li className="list_circle_style pl-7">
+                서버 데이터는 React Query로 분리하여 관리
+                <ul className="flex flex-col gap-2 mt-2">
+                  <li className="list_circle_style pl-7">
+                    리액트에서 state로 관리해야 할 상태값을 줄여 코드의 양 감소
+                  </li>
+                  <li className="list_circle_style pl-7">
+                    서버 데이터의 값이 변할때마다 자동으로 값이 업데이트 되어 코드의 유지보수성을
+                    높임
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li className="list_disc_style">
+            일정 CRUD 기능과 회원 정보 CRUD 기능을 위한 api 작성
+            <ul className="flex flex-col gap-2 my-2">
+              <li className="list_circle_style pl-7">
                 API 작성 시 자원과 행위를 명확하게 표현한 RESTful API 작성
               </li>
-              <li className="list-circle list-inside pl-7">
+              <li className="list_circle_style pl-7">
                 라우팅 처리를 통해 코드를 페이지별로 분리하여 가독성을 높임
               </li>
             </ul>
           </li>
-          <li className="list-disc list-inside">
-            MySQL를 사용하여 데이터베이스 구축
+          <li className="list_disc_style">
+            Access token과 refresh token을 활용한 유저 인증 로직 구현
             <ul className="flex flex-col gap-2 mt-2">
-              <li className="list-circle list-inside pl-7">
+              <li className="list_circle_style pl-7">
+                Access token의 유효기간을 줄이고, refresh token은 access token 만료시에만 서버로
+                전송하여 CSRF 공격 위험을 낮춤
+              </li>
+              <li className="list_circle_style pl-7">
+                Axios 인터셉터를 사용하여 요청마다 access token을 자동으로 삽입하고, 토큰 만료 시
+                refresh token으로 토큰 재발급을 받을 수 있도록 함
+              </li>
+            </ul>
+          </li>
+          <li className="list_disc_style">
+            데이터베이스 스키마 설계 및 MySQL 데이터베이스 구축
+            <ul className="flex flex-col gap-2 mt-2">
+              <li className="list_circle_style pl-7">
                 데이터에 맞는 데이터 타입을 선택하고, 테이블 간의 관계를 적절하게 설정하여 효과적인
                 데이터베이스 스키마 설계
               </li>
-              <li className="list-circle list-inside pl-7">
+              <li className="list_circle_style pl-7">
                 클라이언트의 요청에 따라 특정 기간, 데이터 갯수 등 필요한 데이터만 전송할 수 있도록
                 쿼리문 작성
               </li>
-              <li className="list-circle list-inside pl-7">
+              <li className="list_circle_style pl-7">
                 사용자 입력값이 쿼리문에 직접적으로 삽입되지 않도록 하여 SQL 인젝션 공격 방지
               </li>
             </ul>
           </li>
-          <li className="list-disc list-inside">
-            클라이언트 상태값은 Redux로, 서버 데이터는 React Query로 분리하여 관리
+          <li className="list_disc_style">
+            팀원간 코드 통일성을 높이고 소통을 효율적으로 하기 위해 팀 document 작성
             <ul className="flex flex-col gap-2 mt-2">
-              <li className="list-circle list-inside pl-7">
-                리액트에서 state로 관리해야 할 상태값을 줄여 코드의 양 감소
+              <li className="list_circle_style pl-7">
+                프로젝트 시작 전 코드 컨벤션과 커밋 컨벤션, 브랜치 분기, 디렉토리 구조 등 서로가
+                이해한 부분에서 충돌되는 것이 없도록 규칙을 정하고 상세하게 문서로 기록함
               </li>
-              <li className="list-circle list-inside pl-7">
-                서버 데이터의 값이 변할때마다 자동으로 값이 업데이트 되어 코드의 유지보수가 간편해짐
+              <li className="list_circle_style pl-7">
+                코드에 문제가 생겼을 시 서로의 코드를 더 쉽게 이해하여 문제를 더 빠르게 해결할 수
+                있었음
               </li>
-            </ul>
-          </li>
-          <li className="list-disc list-inside">
-            Access token과 refresh token을 활용한 유저 인증 로직 구현
-            <ul className="flex flex-col gap-2 mt-2">
-              <li className="list-circle list-inside pl-7">
-                Access token의 유효기간을 줄이고, refresh token은 access token의 만료시에만 서버로
-                전송하여 CSRF 공격 위험을 낮춤
+              <li className="list_circle_style pl-7">
+                현재 진행하고 있는 작업은 프로젝트 레포지토리 칸반 보드에 기록. 깃허브 커밋 내역과
+                칸반 보드를 통해 서로의 작업 내용을 알고 효율적으로 작업할 수 있었음.
               </li>
-              <li className="list-circle list-inside pl-7">
-                Axios 인터셉터를 사용하여 요청마다 access token을 자동으로 삽입하고, 토큰 만료 시
-                refresh token으로 토큰 재발급을 받을 수 있도록 함
+              <li className="list_circle_style pl-7">
+                <a
+                  href="https://quixotic-moth-78c.notion.site/DayGrid-Home-b0cc12191a64433f94ae2775ade5187c?pvs=4"
+                  target="_blank"
+                  className="underline"
+                >
+                  Notion 팀 보드 링크
+                </a>
               </li>
             </ul>
           </li>

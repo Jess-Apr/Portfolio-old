@@ -5,7 +5,7 @@ import { portfolioSkills } from "../assets/images/skills/projectSkills";
 
 function Portfolio(): JSX.Element {
   return (
-    <div className="flex flex-col px-3">
+    <div className="flex flex-col items-start px-3">
       <a href="https://github.com/Jess-Apr/Portfolio" target="_blank" className="link">
         <img src={github} className="w-5 h-5" />
         <span className="link_text">Github 링크</span>
