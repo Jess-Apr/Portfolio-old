@@ -122,28 +122,6 @@ function Daygrid(): JSX.Element {
               </li>
             </ul>
           </li>
-          <li className="list_disc_style">
-            팀원간 코드 통일성을 높이고 소통을 효율적으로 하기 위해 팀 document 작성
-            <ul className="flex flex-col gap-2 mt-2">
-              <li className="list_circle_style pl-7">
-                프로젝트 시작 전 코드 컨벤션과 커밋 컨벤션, 브랜치 분기, 디렉토리 구조 등 서로가
-                이해한 부분에서 충돌되는 것이 없도록 규칙을 정하고 상세하게 문서로 기록함
-              </li>
-              <li className="list_circle_style pl-7">
-                현재 진행하고 있는 작업은 프로젝트 레포지토리 칸반 보드에 기록. 깃허브 커밋 내역과
-                칸반 보드를 통해 서로의 작업 내용을 알고 효율적으로 작업할 수 있었음.
-              </li>
-              <li className="list_circle_style pl-7">
-                <a
-                  href="https://quixotic-moth-78c.notion.site/DayGrid-Home-b0cc12191a64433f94ae2775ade5187c?pvs=4"
-                  target="_blank"
-                  className="underline"
-                >
-                  Notion 팀 보드 링크
-                </a>
-              </li>
-            </ul>
-          </li>
         </ul>
       </div>
     </div>
