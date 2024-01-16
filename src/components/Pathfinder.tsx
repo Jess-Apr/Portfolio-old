@@ -57,7 +57,7 @@ function Pathfinder(): JSX.Element {
                 state 값의 개수를 줄여 입력 정보가 변할 때 리렌더링이 발생하는 횟수를 줄임
               </li>
               <li className="list_circle_style pl-7">
-                state 값을 바꾸기 위한 코드가 삭제되어 전체적인 코드의 양을 줄어듦
+                state 값을 바꾸기 위한 코드가 삭제되어 전체적인 코드의 양을 줄임
               </li>
             </ul>
           </li>
