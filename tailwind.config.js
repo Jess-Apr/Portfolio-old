@@ -15,6 +15,7 @@ module.exports = {
           be: "#E4E9BE",
           gray: "#8B8B8B",
           lightGray: "#F0EFEC",
+          title: "#9e5e54",
         },
         black: {
           font: "#444444",

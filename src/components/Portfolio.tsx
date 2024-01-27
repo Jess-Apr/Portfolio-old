@@ -11,7 +11,7 @@ function Portfolio(): JSX.Element {
         <span className="link_text">Github 링크</span>
       </a>
       <Slider />
-      <h2 className="text-2xl font-medium mt-6 mb-4">프로젝트 소개</h2>
+      <h2 className="title">프로젝트 소개</h2>
       <div className="flex flex-col gap-3 text-lg mb-5 md:gap-5">
         <div>제가 진행했던 프로젝트를 설명하기 위해 만든 웹 포트폴리오 페이지입니다.</div>
         <div className="list-disc list-inside">프로젝트 기간 : 2023.11.28 ~ 2023.12.26</div>
@@ -25,7 +25,7 @@ function Portfolio(): JSX.Element {
         ))}
       </div>
       <div>
-        <h2 className="text-2xl font-medium mt-6 mb-4">구현 기능</h2>
+        <h2 className="title">구현 기능</h2>
         <ul className="flex flex-col ml-3 mb-7 text-lg gap-3">
           <li className="list-disc list-inside">
             반응형 디자인을 활용하여 다양한 디바이스와 화면 크기에 대응하는 웹페이지 구현
