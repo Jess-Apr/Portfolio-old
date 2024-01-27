@@ -99,12 +99,12 @@ function Pathfinder(): JSX.Element {
         <li className="list_disc_style">
           Oauth2를 활용하여 카카오톡과 깃허브 소셜 로그인 기능 구현
           <ol className="flex flex-col gap-2 mt-2">
-            <li className="ml-5 pl-7">
+            <li className="ml-2">
               1. 사용자가 로그인 요청을 하면 각 플랫폼의 소셜 로그인 페이지로 연결
             </li>
-            <li className="ml-5 pl-7">2. 로그인 성공 시 소셜 로그인 플랫폼에서 인가 코드 전달</li>
-            <li className="ml-5 pl-7">3. 인가 코드를 백엔드 서버로 전달</li>
-            <li className="ml-5 pl-7">
+            <li className="ml-2">2. 로그인 성공 시 소셜 로그인 플랫폼에서 인가 코드 전달</li>
+            <li className="ml-2">3. 인가 코드를 백엔드 서버로 전달</li>
+            <li className="ml-2">
               4. 백엔드 서버에서 소셜 로그인 플랫폼으로부터 access token을 발급받은 후 자체 서버의
               토큰 발행. 서버로부터 토큰을 전달받으면 쿠키에 저장.
             </li>
