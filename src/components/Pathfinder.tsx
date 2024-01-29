@@ -2,7 +2,7 @@ import React from "react";
 import github from "../assets/images/github.png";
 import link from "../assets/images/link.png";
 import Slider from "./Slider";
-import { pathfinderSkills } from "../assets/images/skills/projectSkills";
+import { pathfinderSkills } from "../assets/projects/projectSkills";
 
 function Pathfinder(): JSX.Element {
   return (
@@ -38,13 +38,42 @@ function Pathfinder(): JSX.Element {
         </ul>
       </div>
       <h2 className="title">사용한 기술</h2>
-      <div className="w-42 flex items-center gap-2 mb-8">
+      <div className="w-42 flex items-center gap-2 mb-6">
         {pathfinderSkills.map((v, i) => (
           <div className="skill_fe" key={i}>
             {v}
           </div>
         ))}
       </div>
+      <ul className="flex flex-col ml-3 mb-7 text-lg gap-3">
+        <li className="list_disc_style">
+          Recoil을 사용한 이유
+          <ul className="flex flex-col gap-2 mt-2">
+            <li className="list_circle_style pl-7">
+              Atom으로 상태를 선언하여 적은 코드로 전역 상태를 관리할 수 있음. 전역 상태를 사용하면
+              Props drilling을 방지하여 복잡도를 줄일 수 있고, 상태 추적이 용이해짐.
+            </li>
+            <li className="list_circle_style pl-7">
+              짧은 시간 안에 프로젝트를 완성해야 하고, 상태 관리 라이브러리를 사용해보지 않은 팀원이
+              있어 구조가 직관적이고 간단한 Recoil을 채택
+            </li>
+          </ul>
+        </li>
+        <li className="list_disc_style">
+          Styled-components를 사용한 이유
+          <ul className="flex flex-col gap-2 mt-2">
+            <li className="list_circle_style pl-7">
+              유일한 class명을 생성하여 붙여주기 때문에 class 네이밍을 고민하지 않아도 되고, 파일
+              단위로 스타일이 적용되어 다른 파일에 영향을 주지 않음. FE 팀원 모두가 팀 프로젝트를
+              처음 진행해보기 때문에 혼란을 줄이기 위해 채택.
+            </li>
+            <li className="list_circle_style pl-7">
+              if문, 삼항 연산자, 변수 등 JS 코드를 사용할 수 있어 동적 스타일링이 가능. 프로젝트에서
+              디자인을 중점적으로 생각했기 때문에 동적 스타일링이 필요할 것이라 생각하였음.
+            </li>
+          </ul>
+        </li>
+      </ul>
       <h2 className="title">내가 기여한 부분</h2>
       <ul className="flex flex-col ml-3 mb-7 text-lg gap-3">
         <li className="list_disc_style">

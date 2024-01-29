@@ -2,7 +2,7 @@ import React from "react";
 import github from "../assets/images/github.png";
 import link from "../assets/images/link.png";
 import Slider from "./Slider";
-import { daygridFe, daygridBe } from "../assets/images/skills/projectSkills";
+import { daygridFe, daygridBe } from "../assets/projects/projectSkills";
 
 function Daygrid(): JSX.Element {
   return (
@@ -48,13 +48,43 @@ function Daygrid(): JSX.Element {
             </div>
           ))}
         </div>
-        <div className="w-42 flex items-center gap-2 mb-8">
+        <div className="w-42 flex items-center gap-2 mb-6">
           {daygridBe.map((v, i) => (
             <div className="skill_be" key={i}>
               {v}
             </div>
           ))}
         </div>
+        <ul className="flex flex-col ml-3 mb-7 text-lg gap-3">
+          <li className="list_disc_style">
+            Redux Toolkit을 사용한 이유
+            <ul className="flex flex-col gap-2 mt-2">
+              <li className="list_circle_style pl-7">
+                중앙에서 전역 상태를 관리하고, 컴포넌트가 스토어에 직접 접근하여 데이터를 사용할 수
+                있음. 단일 스토어에서 상태를 관리하기 때문에 상태를 어디에서 관리해야 할지 고민하지
+                않아도 됨.
+              </li>
+              <li className="list_circle_style pl-7">
+                Redux Toolkit을 통해 보일러플레이트 코드양을 줄여 상태관리 작업을 단순화하고 실수를
+                방지
+              </li>
+            </ul>
+          </li>
+          <li className="list_disc_style">
+            React Query를 사용한 이유
+            <ul className="flex flex-col gap-2 mt-2">
+              <li className="list_circle_style pl-7">
+                캐싱 기능을 통해 비동기 데이터의 불필요한 반복 호출을 방지하거나, 데이터를
+                지속적으로 동기화하고 업데이트를 해주는 등 서버 데이터를 손쉽게 관리할 수 있음
+              </li>
+              <li className="list_circle_style pl-7">
+                Redux Toolkit에서도 RTK Query 통해 비동기 데이터를 불러오고 캐싱하는 기능을 제공.
+                이후 다른 프로젝트에서 Redux Toolkit을 사용한다면 편리성을 위해 RTK Query를
+                고려해보아도 되겠다고 생각하였음.
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
       <div>
         <h2 className="title">내가 기여한 부분</h2>
@@ -67,12 +97,12 @@ function Daygrid(): JSX.Element {
                 Bebel-loader 와 ts-loader를 esbuild-loader로 마이그레이션하여 빌드 시간 단축
                 <ul className="flex flex-col gap-2 mt-2">
                   <li className="list_circle_style pl-7">
+                    npm run build 속도: 17.84초 -&gt; 8.56초, npm start 속도: 10.62초 -&gt; 6.62초
+                  </li>
+                  <li className="list_circle_style pl-7">
                     esbuild는 Go언어를 기반으로 작성되어 JavaScrip에 비해 빠른 빌드 속도를 보여줌.
                     하지만 타입 체킹을 진행하지 않기 때문에 fork-ts-checker-webpack-plugin을
                     사용하여 타입 체킹을 별도의 프로세스로 분리하여 진행.
-                  </li>
-                  <li className="list_circle_style pl-7">
-                    npm run build 속도: 17.84초 -&gt; 8.56초, npm start 속도: 10.62초 -&gt; 6.62초
                   </li>
                 </ul>
               </li>
