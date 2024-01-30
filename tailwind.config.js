@@ -34,6 +34,9 @@ module.exports = {
       listStyleType: {
         circle: "circle",
       },
+      screens: {
+        intro: "845px",
+      },
       keyframes: {
         dropdown: {
           "0%": { transform: "translateY(0)" },
