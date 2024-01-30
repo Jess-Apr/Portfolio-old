@@ -30,8 +30,8 @@ function Portfolio(): JSX.Element {
           Tailwind CSS를 사용한 이유
           <ul className="flex flex-col gap-2 mt-2">
             <li className="list_circle_style pl-7">
-              Utility-First CSS로, 정적인 CSS 클래스를 사용하기 때문에 런타임이 아닌 빌드타임에
-              스타일을 생성. 런타임에 스타일을 정의하는 방식보다 페이지 렌더링 시간이 짧음
+              정적인 CSS 클래스를 사용하기 때문에 런타임이 아닌 빌드타임에 스타일을 생성. 런타임에
+              스타일을 정의하는 방식보다 페이지 렌더링 시간이 짧음
             </li>
             <li className="list_circle_style pl-7">
               기존 CSS를 작성하는 방식과 달라 러닝 커브가 있지만, 솔로 프로젝트라 개발 속도를 맞춰야

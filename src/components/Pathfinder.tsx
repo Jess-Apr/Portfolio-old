@@ -50,8 +50,7 @@ function Pathfinder(): JSX.Element {
           Recoil을 사용한 이유
           <ul className="flex flex-col gap-2 mt-2">
             <li className="list_circle_style pl-7">
-              Atom으로 상태를 선언하여 적은 코드로 전역 상태를 관리할 수 있음. 전역 상태를 사용하면
-              Props drilling을 방지하여 복잡도를 줄일 수 있고, 상태 추적이 용이해짐.
+              적은 코드라인과 보일러플레이트로 전역 상태를 관리할 수 있음
             </li>
             <li className="list_circle_style pl-7">
               짧은 시간 안에 프로젝트를 완성해야 하고, 상태 관리 라이브러리를 사용해보지 않은 팀원이
@@ -68,8 +67,8 @@ function Pathfinder(): JSX.Element {
               처음 진행해보기 때문에 혼란을 줄이기 위해 채택.
             </li>
             <li className="list_circle_style pl-7">
-              if문, 삼항 연산자, 변수 등 JS 코드를 사용할 수 있어 동적 스타일링이 가능. 프로젝트에서
-              디자인을 중점적으로 생각했기 때문에 동적 스타일링이 필요할 것이라 생각하였음.
+              JS 코드를 사용하여 동적 스타일링이 가능. 프로젝트에서 디자인을 중점적으로 생각했기
+              때문에 동적 스타일링이 필요할 것이라 생각하였음.
             </li>
           </ul>
         </li>
@@ -83,13 +82,12 @@ function Pathfinder(): JSX.Element {
               유저 정보 입력값을 react-hook-form 라이브러리를 사용하여 관리
               <ul className="flex flex-col gap-2 mt-2">
                 <li className="list_circle_style pl-7">
-                  폼 입력값을 관리하거나 유효성 검사를 위해 state를 만들어 사용하는 대신 submit을
-                  했을 때 react-hook-form에서 제공되는 데이터를 받아 사용
+                  폼 입력값을 관리하거나 유효성 검사를 위해 state를 만들어 사용하지 않고 submit 시
+                  react-hook-form에서 제공하는 데이터를 받아 사용
                 </li>
                 <li className="list_circle_style pl-7">
-                  state로 폼 입력을 관리할 경우 state의 입력값이 변할때마다 리렌더링이 일어나게
-                  되는데, state 갯수를 줄임으로써 불필요한 리렌더링이 일어나지 않도록 하여 성능을
-                  개선
+                  state로 폼 입력을 관리할 경우 입력값이 변할때마다 리렌더링이 일어나게 되는데,
+                  state 갯수를 줄임으로써 불필요한 리렌더링이 일어나지 않도록 하여 성능을 개선
                 </li>
                 <li className="list_circle_style pl-7">
                   state를 선언하는 코드와 입력값을 검증하는 함수를 생략하여 코드가 간결해지고
@@ -117,9 +115,11 @@ function Pathfinder(): JSX.Element {
                   로그인 시 쿠키에 저장한 access token을 댓글 수정 요청 헤더에 담아 전송
                 </li>
                 <li className="list_circle_style pl-7">
-                  토큰을 검증하여 사용자가 댓글 작성자일 경우에만 댓글 수정이 가능하도록 함. Access
-                  token이 유효하지 않거나 댓글 작성자가 아닐 경우 수정 권한이 없다고 알리는 알림창
-                  팝업.
+                  토큰을 검증하여 사용자가 댓글 작성자일 경우에만 댓글 수정이 가능
+                </li>
+                <li className="list_circle_style pl-7">
+                  Access token이 유효하지 않거나 댓글 작성자가 아닐 경우 수정 권한이 없다고 알리는
+                  알림창 팝업
                 </li>
               </ul>
             </li>
@@ -159,6 +159,25 @@ function Pathfinder(): JSX.Element {
           </li>
         </ul>
       </div>
+      <h2 className="title">배운 점</h2>
+      <ul className="flex flex-col ml-3 mb-7 text-lg gap-3">
+        <li className="list_disc_style">
+          매일 아침 데일리 스크럼을 진행하고, 짧은 기간동안 많은 작업을 하게되면서 팀원들과 정말
+          많은 의견을 나누었다. 프로젝트가 원활하게 진행되도록 내가 작업한 내용을 말로써 명확하게
+          전달하고, 나의 업무를 잘 알지 못하는 백엔드 팀원들도 충분히 이해할 수 있도록 상대방에 맞춰
+          소통을 하는 방법을 배웠다.
+        </li>
+        <li className="list_disc_style">
+          서비스 배포 후 사용자의 피드백을 받고 고치는 과정을 거치며 내가 생각한 것과 실제 사용자가
+          경험하는 것이 다를 수 있다는 것을 알게되었다. 개발자의 입장이 아닌 사용자의 입장에서
+          제품을 바라보아야한다는 것을 다시 한번 깨달았던 경험이었다.
+        </li>
+        <li className="list_disc_style">
+          로그인과 소셜로그인을 구현하면서 많은 에러를 만났다. 에러를 해결하는 과정에서 JWT 토큰을
+          사용한 로그인과 소셜 로그인이 어떻게 진행되는지와 쿠키와 세션에 대한 개념을 이해하게
+          되었다.
+        </li>
+      </ul>
     </div>
   );
 }
