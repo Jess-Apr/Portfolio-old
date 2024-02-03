@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import github from "../assets/images/github.png";
 import link from "../assets/images/link.png";
 import Slider from "./Slider";
 import { pathfinderSkills } from "../assets/projects/projectSkills";
 
 function Pathfinder(): JSX.Element {
+  const [skillState, setSkillsState] = useState<boolean>(false);
+  const [visibilityAnimation, setVisibilityAnimation] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (skillState) {
+      setVisibilityAnimation(true);
+    } else {
+      setTimeout(() => {
+        setVisibilityAnimation(false);
+      }, 500);
+    }
+  }, [skillState]);
+
   return (
     <div className="flex flex-col px-3">
       <div className="flex flex-col md:flex-row md:gap-6 md:items-center">
@@ -45,34 +58,51 @@ function Pathfinder(): JSX.Element {
           </div>
         ))}
       </div>
-      <ul className="flex flex-col ml-3 mb-7 text-lg gap-3">
-        <li className="list_disc_style">
-          Recoil을 사용한 이유
-          <ul className="flex flex-col gap-2 mt-2">
-            <li className="list_circle_style pl-7">
-              적은 코드라인과 보일러플레이트로 전역 상태를 관리할 수 있음
+      <div className="w-full border-t-one border-b-one mb-4">
+        <div className="flex gap-6 items-center my-4">
+          <p className="text-xl">특정 기술을 사용한 이유</p>
+          <div
+            className="px-2 py-3 cursor-pointer bg-primary-point rounded-sm"
+            onClick={() => setSkillsState(!skillState)}
+          >
+            {skillState ? "숨기기" : "펼쳐보기"}
+          </div>
+        </div>
+        <div className={`${visibilityAnimation ? "overflow-hidden" : "hidden animate-dropdown"}`}>
+          <ul
+            className={`flex flex-col ml-3 mb-7 text-lg gap-3 ${
+              skillState ? "animate-dragup" : "animate-dropdown"
+            }`}
+          >
+            <li className="list_disc_style">
+              Recoil을 사용한 이유
+              <ul className="flex flex-col gap-2 mt-2">
+                <li className="list_circle_style pl-7">
+                  적은 코드라인과 보일러플레이트로 전역 상태를 관리할 수 있음
+                </li>
+                <li className="list_circle_style pl-7">
+                  짧은 시간 안에 프로젝트를 완성해야 하고, 상태 관리 라이브러리를 사용해보지 않은
+                  팀원이 있어 구조가 직관적이고 간단한 Recoil을 채택
+                </li>
+              </ul>
             </li>
-            <li className="list_circle_style pl-7">
-              짧은 시간 안에 프로젝트를 완성해야 하고, 상태 관리 라이브러리를 사용해보지 않은 팀원이
-              있어 구조가 직관적이고 간단한 Recoil을 채택
+            <li className="list_disc_style">
+              Styled-components를 사용한 이유
+              <ul className="flex flex-col gap-2 mt-2">
+                <li className="list_circle_style pl-7">
+                  유일한 class명을 생성하여 붙여주기 때문에 class 네이밍을 고민하지 않아도 되고,
+                  파일 단위로 스타일이 적용되어 다른 파일에 영향을 주지 않음. FE 팀원 모두가 팀
+                  프로젝트를 처음 진행해보기 때문에 혼란을 줄이기 위해 채택.
+                </li>
+                <li className="list_circle_style pl-7">
+                  JS 코드를 사용하여 동적 스타일링이 가능. 프로젝트에서 디자인을 중점적으로 생각했기
+                  때문에 동적 스타일링이 필요할 것이라 생각하였음.
+                </li>
+              </ul>
             </li>
           </ul>
-        </li>
-        <li className="list_disc_style">
-          Styled-components를 사용한 이유
-          <ul className="flex flex-col gap-2 mt-2">
-            <li className="list_circle_style pl-7">
-              유일한 class명을 생성하여 붙여주기 때문에 class 네이밍을 고민하지 않아도 되고, 파일
-              단위로 스타일이 적용되어 다른 파일에 영향을 주지 않음. FE 팀원 모두가 팀 프로젝트를
-              처음 진행해보기 때문에 혼란을 줄이기 위해 채택.
-            </li>
-            <li className="list_circle_style pl-7">
-              JS 코드를 사용하여 동적 스타일링이 가능. 프로젝트에서 디자인을 중점적으로 생각했기
-              때문에 동적 스타일링이 필요할 것이라 생각하였음.
-            </li>
-          </ul>
-        </li>
-      </ul>
+        </div>
+      </div>
       <h2 className="title">내가 기여한 부분</h2>
       <ul className="flex flex-col ml-3 mb-7 text-lg gap-3">
         <li className="list_disc_style">
@@ -142,12 +172,12 @@ function Pathfinder(): JSX.Element {
       </ul>
       <h2 className="title">트러블 슈팅 경험</h2>
       <div className="flex flex-col mb-7 text-lg gap-3">
-        <div className="font-medium">🚨 AS-IS</div>
+        <div className="font-medium">🚨 문제 상황</div>
         <div className="mb-2">
           로그인 또는 회원가입을 할 때 버튼을 연달아 누를 경우 서버에 요청이 여러번 전송되어 제대로
           응답이 돌아오지 않는 현상 발생
         </div>
-        <div className="font-medium">💡 TO-BE</div>
+        <div className="font-medium">💡 해결 방법</div>
         <ul className="flex flex-col gap-2">
           <li className="list-disc ml-5 pl-7">
             isLoading이라는 state값을 생성한 후, 응답이 보내지고 돌아올때까지 isLoading 값을 true로

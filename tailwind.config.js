@@ -23,6 +23,7 @@ module.exports = {
       },
       padding: {
         1: ".0625rem",
+        3: ".1875rem",
         13: ".8125rem",
       },
       spacing: {
@@ -30,6 +31,9 @@ module.exports = {
         "5p": "5%",
         "8p": "8%",
         39: "39px",
+      },
+      borderWidth: {
+        one: ".0625rem",
       },
       listStyleType: {
         circle: "circle",

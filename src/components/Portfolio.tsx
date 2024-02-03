@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import github from "../assets/images/github.png";
 import Slider from "./Slider";
 import { portfolioSkills } from "../assets/projects/projectSkills";
 
 function Portfolio(): JSX.Element {
+  const [skillState, setSkillsState] = useState<boolean>(false);
+  const [visibilityAnimation, setVisibilityAnimation] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (skillState) {
+      setVisibilityAnimation(true);
+    } else {
+      setTimeout(() => {
+        setVisibilityAnimation(false);
+      }, 500);
+    }
+  }, [skillState]);
+
   return (
     <div className="flex flex-col items-start px-3">
       <a href="https://github.com/Jess-Apr/Portfolio" target="_blank" className="link">
@@ -18,33 +31,50 @@ function Portfolio(): JSX.Element {
         <div>개인 프로젝트입니다.</div>
       </div>
       <h2 className="title">사용한 기술</h2>
-      <div className="w-42 flex items-center gap-2 mb-6">
+      <div className="w-42 flex items-center gap-2 mb-7">
         {portfolioSkills.map((v, i) => (
           <div className="skill_fe" key={i}>
             {v}
           </div>
         ))}
       </div>
-      <ul className="flex flex-col ml-3 mb-7 text-lg gap-3">
-        <li className="list_disc_style">
-          Tailwind CSS를 사용한 이유
-          <ul className="flex flex-col gap-2 mt-2">
-            <li className="list_circle_style pl-7">
-              정적인 CSS 클래스를 사용하기 때문에 런타임이 아닌 빌드타임에 스타일을 생성. 런타임에
-              스타일을 정의하는 방식보다 페이지 렌더링 시간이 짧음
-            </li>
-            <li className="list_circle_style pl-7">
-              기존 CSS를 작성하는 방식과 달라 러닝 커브가 있지만, 솔로 프로젝트라 개발 속도를 맞춰야
-              하는 팀원이 없고 화려한 디자인을 구현할 필요가 없어 Tailwind를 사용해보기에 적절하다고
-              판단
-            </li>
-            <li className="list_circle_style pl-7">
-              반응형 웹을 만드는 것이 프로젝트의 메인 목표 중 하나였음. 따라서 클래스 이름을 통해
-              반응형 디자인을 쉽게 구현할 수 있는 Tailwind가 적합하다고 생각하였음.
+      <div className="w-full border-t-one border-b-one mb-4">
+        <div className="flex gap-6 items-center my-4">
+          <p className="text-xl">특정 기술을 사용한 이유</p>
+          <div
+            className="px-2 py-3 cursor-pointer bg-primary-point rounded-sm"
+            onClick={() => setSkillsState(!skillState)}
+          >
+            {skillState ? "숨기기" : "펼쳐보기"}
+          </div>
+        </div>
+        <div className={`${visibilityAnimation ? "overflow-hidden" : "hidden animate-dropdown"}`}>
+          <ul
+            className={`flex flex-col ml-3 mb-7 text-lg gap-3 ${
+              skillState ? "animate-dragup" : "animate-dropdown"
+            }`}
+          >
+            <li className="list_disc_style">
+              Tailwind CSS
+              <ul className="flex flex-col gap-2 mt-2">
+                <li className="list_circle_style pl-7">
+                  정적인 CSS 클래스를 사용하기 때문에 런타임이 아닌 빌드타임에 스타일을 생성.
+                  런타임에 스타일을 정의하는 방식보다 페이지 렌더링 시간이 짧음
+                </li>
+                <li className="list_circle_style pl-7">
+                  기존 CSS를 작성하는 방식과 달라 러닝 커브가 있지만, 솔로 프로젝트라 개발 속도를
+                  맞춰야 하는 팀원이 없고 화려한 디자인을 구현할 필요가 없어 Tailwind를 사용해보기에
+                  적절하다고 판단
+                </li>
+                <li className="list_circle_style pl-7">
+                  반응형 웹을 만드는 것이 프로젝트의 메인 목표 중 하나였음. 따라서 클래스 이름을
+                  통해 반응형 디자인을 쉽게 구현할 수 있는 Tailwind가 적합하다고 생각하였음.
+                </li>
+              </ul>
             </li>
           </ul>
-        </li>
-      </ul>
+        </div>
+      </div>
       <div>
         <h2 className="title">구현 기능</h2>
         <ul className="flex flex-col ml-3 mb-7 text-lg gap-3">
