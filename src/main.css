@@ -77,6 +77,10 @@
   @apply list-circle ml-5;
 }
 
+.list_decimal_style {
+  @apply list-decimal ml-2;
+}
+
 .title {
   @apply text-2xl font-medium mt-6 mb-4 text-secondary-title;
 }

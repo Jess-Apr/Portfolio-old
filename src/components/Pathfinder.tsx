@@ -78,11 +78,8 @@ function Pathfinder(): JSX.Element {
               Recoil을 사용한 이유
               <ul className="flex flex-col gap-2 mt-2">
                 <li className="list_circle_style pl-7">
-                  적은 코드라인과 보일러플레이트로 전역 상태를 관리할 수 있음
-                </li>
-                <li className="list_circle_style pl-7">
                   짧은 시간 안에 프로젝트를 완성해야 하고, 상태 관리 라이브러리를 사용해보지 않은
-                  팀원이 있어 구조가 직관적이고 간단한 Recoil을 채택
+                  팀원이 있어 비교적 구조가 직관적이고 빨리 배울 수 있는 Recoil을 사용
                 </li>
               </ul>
             </li>
@@ -106,108 +103,109 @@ function Pathfinder(): JSX.Element {
       <h2 className="title">내가 기여한 부분</h2>
       <ul className="flex flex-col ml-3 mb-7 text-lg gap-3">
         <li className="list_disc_style">
-          로그인 페이지, 회원가입 페이지
-          <ul className="flex flex-col gap-2 mt-2">
-            <li className="list_circle_style pl-7">
-              유저 정보 입력값을 react-hook-form 라이브러리를 사용하여 관리
-              <ul className="flex flex-col gap-2 mt-2">
-                <li className="list_circle_style pl-7">
-                  폼 입력값을 관리하거나 유효성 검사를 위해 state를 만들어 사용하지 않고 submit 시
-                  react-hook-form에서 제공하는 데이터를 받아 사용
-                </li>
-                <li className="list_circle_style pl-7">
-                  state로 폼 입력을 관리할 경우 입력값이 변할때마다 리렌더링이 일어나게 되는데,
-                  state 갯수를 줄임으로써 불필요한 리렌더링이 일어나지 않도록 하여 성능을 개선
-                </li>
-                <li className="list_circle_style pl-7">
-                  state를 선언하는 코드와 입력값을 검증하는 함수를 생략하여 코드가 간결해지고
-                  유지보수가 쉬워짐
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li className="list_disc_style">
-          마이페이지
-          <ul className="flex flex-col gap-2 mt-2">
-            <li className="list_circle_style pl-7">
-              사용자가 작성한 게시글 갯수에 따라 프로필 이미지로 사용할 수 있는 캐릭터 오픈
-            </li>
-          </ul>
-        </li>
-        <li className="list_disc_style">
-          댓글 CRUD 기능
-          <ul className="flex flex-col gap-2 mt-2">
-            <li className="list_circle_style pl-7">
-              토큰을 이용하여 사용자가 작성한 댓글만 수정할 수 있도록 기능 구현
-              <ul className="flex flex-col gap-2 mt-2">
-                <li className="list_circle_style pl-7">
-                  로그인 시 쿠키에 저장한 access token을 댓글 수정 요청 헤더에 담아 전송
-                </li>
-                <li className="list_circle_style pl-7">
-                  토큰을 검증하여 사용자가 댓글 작성자일 경우에만 댓글 수정이 가능
-                </li>
-                <li className="list_circle_style pl-7">
-                  Access token이 유효하지 않거나 댓글 작성자가 아닐 경우 수정 권한이 없다고 알리는
-                  알림창 팝업
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li className="list_disc_style">
           Oauth2를 활용하여 카카오톡과 깃허브 소셜 로그인 기능 구현
           <ol className="flex flex-col gap-2 mt-2">
-            <li className="ml-2">
-              1. 사용자가 로그인 요청을 하면 각 플랫폼의 소셜 로그인 페이지로 연결
+            <li className="list_decimal_style">
+              사용자의 로그인 요청 시, 각 플랫폼의 소셜 로그인 페이지로 연결
             </li>
-            <li className="ml-2">2. 로그인 성공 시 소셜 로그인 플랫폼에서 인가 코드 전달</li>
-            <li className="ml-2">3. 인가 코드를 백엔드 서버로 전달</li>
-            <li className="ml-2">
-              4. 백엔드 서버에서 소셜 로그인 플랫폼으로부터 access token을 발급받은 후 자체 서버의
-              토큰 발행. 서버로부터 토큰을 전달받으면 쿠키에 저장.
+            <li className="list_decimal_style">
+              로그인 성공 후, 플랫폼에서 발급한 인가 코드를 백엔드 서버로 전달
+            </li>
+            <li className="list_decimal_style">
+              백엔드 서버는 인가 코드를 통해 각 플랫폼에서 access token을 발급 받고, 이를 바탕으로
+              자체 서버 토큰을 발행. 이후 발급된 토큰은 쿠키에 저장.
             </li>
           </ol>
+        </li>
+        <li className="list_disc_style">
+          react-hook-form을 이용하여 로그인, 회원가입, 마이페이지 입력값 관리
+          <ul className="flex flex-col gap-2 mt-2">
+            <li className="list_circle_style pl-7">
+              폼 입력값 관리 및 유효성 검사를 위해 별도의 state를 선언하지 않고, submit 시
+              react-hook-form에서 제공하는 데이터를 활용
+            </li>
+            <li className="list_circle_style pl-7">
+              이를 통해 리렌더링을 횟수를 줄이고, 코드 간결성과 유지보수성을 향상시켰음
+            </li>
+          </ul>
+        </li>
+        <li className="list_disc_style">
+          사용자가 작성한 댓글만 수정, 삭제 가능한 댓글 CRUD 기능 구현
+          <ul className="flex flex-col gap-2 mt-2">
+            <li className="list_circle_style pl-7">
+              로그인 시 쿠키에 저장한 access token을 댓글 수정 요청 헤더에 포함하여 전송
+            </li>
+            <li className="list_circle_style pl-7">
+              토큰 검증 후, 유저가 댓글 작성자일 경우에만 댓글 수정이 가능하도록 하였음
+            </li>
+            <li className="list_circle_style pl-7">
+              유효하지 않은 토큰이나 댓글 작성자가 아닌 경우, 수정 권한 없음을 알리는 알림창이
+              팝업되도록 구현
+            </li>
+          </ul>
         </li>
       </ul>
       <h2 className="title">트러블 슈팅 경험</h2>
       <div className="flex flex-col mb-7 text-lg gap-3">
         <div className="font-medium">🚨 문제 상황</div>
         <div className="mb-2">
-          로그인 또는 회원가입을 할 때 버튼을 연달아 누를 경우 서버에 요청이 여러번 전송되어 제대로
-          응답이 돌아오지 않는 현상 발생
+          로그인 또는 회원가입 과정에서 사용자가 버튼을 연달아 누를 경우 서버에 요청이 여러번
+          전송됨. 이로 인해 응답이 제대로 돌아오지 않는 현상이 발생함.
         </div>
         <div className="font-medium">💡 해결 방법</div>
         <ul className="flex flex-col gap-2">
           <li className="list-disc ml-5 pl-7">
-            isLoading이라는 state값을 생성한 후, 응답이 보내지고 돌아올때까지 isLoading 값을 true로
-            설정. isLoading 값이 true일때는 제출 버튼 대신 로딩 이미지를 출력하여 요청이 중복으로
-            보내지지 않도록 하였음.
+            isLoading이라는 state값을 생성한 후, 서버로부터 응답이 돌아올때까지 isLoading의 값을
+            true로 설정하였음. isLoading 값이 true인 경우, 제출 버튼 대신 로딩 이미지를 출력되도록
+            함.
           </li>
           <li className="list-disc ml-5 pl-7">
-            사용자에게 작업이 진행중이라는 것을 알릴 수 있어 사용자 경험 또한 개선하게 됨
+            이를 통해 요청이 중복으로 보내지지 않도록 했고, 동시에 사용자에게 현재 작업이 진행
+            중임을 알려주어 사용자 경험을 개선하였음.
           </li>
         </ul>
       </div>
       <h2 className="title">배운 점</h2>
-      <ul className="flex flex-col ml-3 mb-7 text-lg gap-3">
-        <li className="list_disc_style">
-          매일 아침 데일리 스크럼을 진행하고, 짧은 기간동안 많은 작업을 하게되면서 팀원들과 정말
-          많은 의견을 나누었다. 프로젝트가 원활하게 진행되도록 내가 작업한 내용을 말로써 명확하게
-          전달하고, 나의 업무를 잘 알지 못하는 백엔드 팀원들도 충분히 이해할 수 있도록 상대방에 맞춰
-          소통을 하는 방법을 배웠다.
+      <ol className="flex flex-col ml-3 mb-7 text-lg gap-3">
+        <li className="list_decimal_style">
+          팀워크와 커뮤니케이션
+          <ul className="flex flex-col ml-3 mt-2 text-lg gap-3">
+            <li className="list_disc_style">
+              매일 아침 데일리 스크럼을 진행하고, 짧은 기간동안 많은 작업을 하게되면서 팀원들과 정말
+              많은 의견을 나누었습니다.
+            </li>
+            <li className="list_disc_style">
+              프로젝트를 원활하게 진행하기 위해 제가 수행한 작업 내용을 명확하게 전달하는 방법과,
+              백엔드 팀원들도 제 업무를 충분히 이해할 수 있도록 상대방의 입장에서 소통하는 방법을
+              배웠습니다.
+            </li>
+          </ul>
         </li>
-        <li className="list_disc_style">
-          서비스 배포 후 사용자의 피드백을 받고 고치는 과정을 거치며 내가 생각한 것과 실제 사용자가
-          경험하는 것이 다를 수 있다는 것을 알게되었다. 개발자의 입장이 아닌 사용자의 입장에서
-          제품을 바라보아야한다는 것을 다시 한번 깨달았던 경험이었다.
+        <li className="list_decimal_style">
+          사용자 경험에 대한 인식
+          <ul className="flex flex-col ml-3 mt-2 text-lg gap-3">
+            <li className="list_disc_style">
+              서비스를 배포하고 사용자의 피드백을 받는 과정에서, 내 생각과 사용자의 경험이 다를 수
+              있음을 알게 되었습니다.
+            </li>
+            <li className="list_disc_style">
+              사용자의 입장에서 제품을 바라보는 중요성을 다시 한 번 깨달았습니다.
+            </li>
+          </ul>
         </li>
-        <li className="list_disc_style">
-          로그인과 소셜로그인을 구현하면서 많은 에러를 만났다. 에러를 해결하는 과정에서 JWT 토큰을
-          사용한 로그인과 소셜 로그인이 어떻게 진행되는지와 쿠키와 세션에 대한 개념을 이해하게
-          되었다.
+        <li className="list_decimal_style">
+          로그인 과정의 이해와 문제 해결
+          <ul className="flex flex-col ml-3 mt-2 text-lg gap-3">
+            <li className="list_disc_style">
+              로그인 및 소셜 로그인 구현 과정에서 다양한 에러를 만났습니다.
+            </li>
+            <li className="list_disc_style">
+              이 과정에서 JWT 토큰을 사용한 로그인, 소셜 로그인의 진행 방식, 그리고 쿠키와 세션에
+              대한 개념에 대해 이해하게 되었습니다.
+            </li>
+          </ul>
         </li>
-      </ul>
+      </ol>
     </div>
   );
 }
