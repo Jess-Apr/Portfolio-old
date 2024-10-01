@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Slider from "../../../components/Slider";
-import {
-    daygridFe,
-    daygridBe,
-    lingpickSkills,
-} from "../../../assets/projects/projectSkills";
+import { lingpickSkills } from "../../../assets/projects/projectSkills";
 
 function Lingpick(): JSX.Element {
     const [skillState, setSkillsState] = useState<boolean>(false);

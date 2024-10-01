@@ -48,7 +48,7 @@ function Slider(): JSX.Element {
                 modalBackgroundRef.current.contains(e.target as Node)
             )
                 return;
-            setIsImageModalShow(null); // 닫힐 때 애니메이션 시작
+            setIsImageModalShow(null);
         };
 
         document.addEventListener("mousedown", listener);
