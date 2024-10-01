@@ -107,13 +107,23 @@ function Nav(): JSX.Element {
                             >
                                 <div
                                     className={
-                                        project === "por"
+                                        project === "lin"
                                             ? "w-full h-full px-2 py-3p bg-secondary-menu cursor-pointer"
                                             : "w-full h-full px-2 py-3p transition duration-300 hover:bg-secondary-lightGray cursor-pointer"
                                     }
-                                    onClick={() => setProject("por")}
+                                    onClick={() => setProject("lin")}
                                 >
-                                    Portfolio
+                                    Lingpick
+                                </div>
+                                <div
+                                    className={
+                                        project === "pin"
+                                            ? "w-full h-full px-2 py-3p bg-secondary-menu cursor-pointer"
+                                            : "w-full h-full px-2 py-3p transition duration-300 hover:bg-secondary-lightGray cursor-pointer"
+                                    }
+                                    onClick={() => setProject("pin")}
+                                >
+                                    PinnFlag
                                 </div>
                                 <div
                                     className={
@@ -124,16 +134,6 @@ function Nav(): JSX.Element {
                                     onClick={() => setProject("day")}
                                 >
                                     DayGrid
-                                </div>
-                                <div
-                                    className={
-                                        project === "pat"
-                                            ? "w-full h-full px-2 py-3p bg-secondary-menu cursor-pointer"
-                                            : "w-full h-full px-2 py-3p transition duration-300 hover:bg-secondary-lightGray cursor-pointer"
-                                    }
-                                    onClick={() => setProject("pat")}
-                                >
-                                    Pathfinder
                                 </div>
                             </div>
                         </div>

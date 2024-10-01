@@ -83,16 +83,26 @@ function Header(): JSX.Element {
                     >
                         <p
                             className={`mb-3 ${
-                                project === "por"
+                                project === "lin"
                                     ? "text-primary-point"
                                     : "hover"
                             }`}
-                            onClick={() => setProject("por")}
+                            onClick={() => setProject("lin")}
                         >
-                            Portfolio
+                            Lingpick
                         </p>
                         <p
                             className={`mb-3 ${
+                                project === "pin"
+                                    ? "text-primary-point"
+                                    : "hover"
+                            }`}
+                            onClick={() => setProject("pin")}
+                        >
+                            PinnFlag
+                        </p>
+                        <p
+                            className={`${
                                 project === "day"
                                     ? "text-primary-point"
                                     : "hover"
@@ -100,16 +110,6 @@ function Header(): JSX.Element {
                             onClick={() => setProject("day")}
                         >
                             DayGrid
-                        </p>
-                        <p
-                            className={`${
-                                project === "pat"
-                                    ? "text-primary-point"
-                                    : "hover"
-                            }`}
-                            onClick={() => setProject("pat")}
-                        >
-                            Pathfinder
                         </p>
                     </div>
                 )}
