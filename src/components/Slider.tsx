@@ -88,7 +88,7 @@ function Slider(): JSX.Element {
             <div className="w-full text-center font-xs text-black-fontLight mb-2">
                 <span>* 사진을 클릭하면 더 자세히 볼 수 있습니다.</span>
             </div>
-            <div className="w-4/5 flex justify-center items-center mx-auto mt-2 mb-10">
+            <div className="w-4/5 flex justify-center items-center mx-auto mb-10">
                 <SimpleSlider {...settings}>
                     {projectImg.map((v, i) => (
                         <div

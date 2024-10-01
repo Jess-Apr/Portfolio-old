@@ -3,6 +3,7 @@ import github from "../../../assets/images/github.png";
 import link from "../../../assets/images/link.png";
 import Slider from "../../../components/Slider";
 import { daygridFe, daygridBe } from "../../../assets/projects/projectSkills";
+import { flushSync } from "react-dom";
 
 function Daygrid(): JSX.Element {
     const [skillState, setSkillsState] = useState<boolean>(false);
@@ -12,16 +13,12 @@ function Daygrid(): JSX.Element {
     useEffect(() => {
         if (skillState) {
             setVisibilityAnimation(true);
-        } else {
-            setTimeout(() => {
-                setVisibilityAnimation(false);
-            }, 500);
         }
     }, [skillState]);
 
     return (
         <div className="flex flex-col px-3">
-            <div className="flex flex-col md:flex-row md:gap-6 md:items-center">
+            <div className="flex flex-col md:flex-row md:gap-4 md:items-center">
                 <a
                     href="https://github.com/Jess-Apr/DayGrid"
                     target="_blank"
@@ -33,31 +30,40 @@ function Daygrid(): JSX.Element {
             </div>
             <Slider />
             <h2 className="title">프로젝트 소개</h2>
-            <div className="flex flex-col text-lg gap-3 mb-5 md:gap-5">
+            <div className="flex flex-col text-lg gap-4 mb-5 md:gap-4">
                 <div>
                     달력에 일정을 남기거나 디데이 설정을 하여 일정 관리를 할 수
                     있고, 원하는 날짜에 다이어리를 작성하여 기록할 수 있는
-                    캘린더 웹 어플리케이션 입니다.
+                    캘린더 웹 어플리케이션
                 </div>
-                <div>프로젝트 기간: 2023.10 ~ 2023.11</div>
-                <ul className="ml-2">
-                    <li className="list_disc_style">참여 인원: 2명</li>
-                    <li className="list_disc_style">
-                        역할: 프론트엔드 개발, 백엔드 개발, 프로젝트 기획 및
-                        디자인
+                <ul className="list-none">
+                    <li className="flex flex-row items-baseline">
+                        <div className="font-medium mr-3">진행 기간:</div>
+                        <div>2023.10 ~ 2023.11</div>
+                    </li>
+                    <li className="flex flex-row items-baseline">
+                        <div className="font-medium mr-3">진행 인원:</div>
+                        <div>풀스택 개발 2인</div>
+                    </li>
+                    <li className="flex flex-row items-baseline">
+                        <div className="font-medium mr-3">담당 업무:</div>
+                        <div>
+                            프론트엔드 개발, 백엔드 개발, 프로젝트 기획 및
+                            디자인
+                        </div>
                     </li>
                 </ul>
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-3">
                 <h2 className="title">사용한 기술</h2>
-                <div className="w-42 flex items-center gap-2">
+                <div className="w-42 flex items-center gap-3">
                     {daygridFe.map((v, i) => (
                         <div className="skill_fe" key={i}>
                             {v}
                         </div>
                     ))}
                 </div>
-                <div className="w-42 flex items-center gap-2 mb-6">
+                <div className="w-42 flex items-center gap-3 mb-6">
                     {daygridBe.map((v, i) => (
                         <div className="skill_be" key={i}>
                             {v}
@@ -80,6 +86,13 @@ function Daygrid(): JSX.Element {
                                 ? "overflow-hidden"
                                 : "hidden animate-dropdown"
                         }`}
+                        onAnimationEnd={() => {
+                            flushSync(() => {
+                                if (!skillState) {
+                                    setVisibilityAnimation(false);
+                                }
+                            });
+                        }}
                     >
                         <ul
                             className={`flex flex-col ml-3 mb-7 text-lg gap-3 ${
@@ -98,7 +111,7 @@ function Daygrid(): JSX.Element {
                                 </ul>
                             </li>
                             <li className="list_disc_style">
-                                React Query
+                                TanStack Query
                                 <ul className="flex flex-col gap-2 mt-2">
                                     <li className="list_circle_style pl-7">
                                         캐싱 기능을 통해 비동기 데이터의 중복
@@ -175,8 +188,8 @@ function Daygrid(): JSX.Element {
                     </ul>
                 </li>
                 <li className="list_disc_style">
-                    React-Query를 사용하여 마이페이지의 서버 데이터를 효율적으로
-                    관리
+                    TanStack Query를 사용하여 마이페이지의 서버 데이터를
+                    효율적으로 관리
                     <ul className="flex flex-col gap-2 mt-2">
                         <li className="list_circle_style pl-7">
                             쉽게 변하지 않는 유저 정보는 시간 제한 없이 캐싱하여
