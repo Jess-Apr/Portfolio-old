@@ -2,7 +2,7 @@ import React from "react";
 import { useRecoilValue } from "recoil";
 import { menuState } from "../recoil/atoms/viewState";
 import Introduction from "../components/Introduction";
-import Skills from "../components/Skills";
+import Skills from "./Skills";
 import Projects from "./projects-page/Projects";
 
 function MainPage(): JSX.Element {
