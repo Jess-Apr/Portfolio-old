@@ -1,6 +1,6 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
-import { menuState } from "../recoil/atoms/menuState";
+import { menuState } from "../recoil/atoms/viewState";
 import Introduction from "../components/Introduction";
 import Skills from "../components/Skills";
 import Projects from "./projects-page/Projects";

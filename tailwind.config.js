@@ -19,6 +19,7 @@ module.exports = {
                 },
                 black: {
                     font: "#444444",
+                    fontLight: "#999999",
                 },
             },
             padding: {

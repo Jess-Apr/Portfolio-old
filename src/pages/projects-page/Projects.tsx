@@ -1,6 +1,6 @@
 import React from "react";
 import { useRecoilState } from "recoil";
-import { projectState } from "../../recoil/atoms/menuState";
+import { projectState } from "../../recoil/atoms/viewState";
 import Daygrid from "./projects/Daygrid";
 import Lingpick from "./projects/Lingpick";
 import PinnFlag from "./projects/PinnFlag";

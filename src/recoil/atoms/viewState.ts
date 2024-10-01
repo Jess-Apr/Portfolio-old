@@ -9,3 +9,8 @@ export const projectState = atom<string>({
     key: "projectState",
     default: "lin",
 });
+
+export const imageModalState = atom<number | null>({
+    key: "imageModalState",
+    default: null,
+});

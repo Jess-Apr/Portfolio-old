@@ -1,6 +1,35 @@
-export const portfolioSkills = ["TypeScript", "React", "Recoil", "Tailwind CSS"];
+export const lingpickSkills = [
+    "TypeScript",
+    "React Native",
+    "Recoil",
+    "TanStack Query",
+];
 
-export const daygridFe = ["JavaScript", "TypeScript", "React", "Redux Toolkit", "React Query"];
+export const pinnflagSkills = [
+    "TypeScript",
+    "React",
+    "Recoil",
+    "styled-components",
+];
+
+export const daygridFe = [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Redux Toolkit",
+    "TanStack Query",
+];
 export const daygridBe = ["Node.js", "Express", "MySQL"];
 
-export const pathfinderSkills = ["TypeScript", "React", "Recoil", "Styled-components"];
+export const portfolioSkills = [
+    "TypeScript",
+    "React",
+    "Recoil",
+    "Tailwind CSS",
+];
+export const pathfinderSkills = [
+    "TypeScript",
+    "React",
+    "Recoil",
+    "Styled-components",
+];

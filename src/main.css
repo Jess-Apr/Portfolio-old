@@ -5,82 +5,83 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
 @layer base {
-  html,
-  body,
-  #root,
-  .app {
-    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue",
-      "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-    width: 100%;
-    height: 100%;
-    -ms-overflow-style: none;
-    ::-webkit-scrollbar {
-      display: none;
+    html,
+    body,
+    #root,
+    .app {
+        font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+            Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
+            "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+            "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+        width: 100%;
+        height: 100%;
+        -ms-overflow-style: none;
+        ::-webkit-scrollbar {
+            display: none;
+        }
     }
-  }
 }
 
 .nav {
-  @apply hidden xl:w-1/5 xl:h-screen xl:bg-primary-nav xl:absolute xl:top-0 xl:left-0 xl:shadow-lg xl:flex xl:flex-wrap xl:justify-center xl:items-center xl:text-black-font;
+    @apply hidden xl:w-1/5 xl:h-screen xl:bg-primary-nav xl:absolute xl:top-0 xl:left-0 xl:shadow-lg xl:flex xl:flex-wrap xl:justify-center xl:items-center xl:text-black-font;
 }
 
 .hover {
-  @apply transition duration-300 hover:text-secondary-gray cursor-pointer;
+    @apply transition duration-300 hover:text-secondary-gray cursor-pointer;
 }
 
 .nav_style {
-  @apply text-2xl font-light hover;
+    @apply text-2xl font-light hover;
 }
 
 .nav_selected {
-  @apply text-2xl text-primary-point font-light cursor-pointer;
+    @apply text-2xl text-primary-point font-light cursor-pointer;
 }
 
 .header {
-  @apply absolute w-full h-14 bg-primary-nav shadow-sm flex justify-start items-center px-8p gap-5p text-xl text-black-font xl:hidden;
+    @apply absolute w-full h-14 bg-primary-nav shadow-sm flex justify-start items-center px-8p gap-5p text-xl text-black-font xl:hidden;
 }
 
 .project_tab_style {
-  @apply text-lg w-full py-2 text-center cursor-pointer transition duration-300 hover:bg-secondary-lightGray;
+    @apply text-lg w-full py-2 text-center cursor-pointer transition duration-300 hover:bg-secondary-lightGray;
 }
 
 .project_tab_selected {
-  @apply text-lg w-full py-2 bg-secondary-menu text-center cursor-pointer;
+    @apply text-lg w-full py-2 bg-secondary-menu text-center cursor-pointer;
 }
 
 .link {
-  @apply flex items-center gap-2 cursor-pointer my-4;
+    @apply flex items-center gap-2 cursor-pointer my-4;
 }
 
 .link_text {
-  @apply text-lg underline hover:text-secondary-gray;
+    @apply text-lg underline hover:text-secondary-gray;
 }
 
 .skill_fe {
-  @apply px-3 py-0.5 rounded-sm bg-secondary-fe;
+    @apply px-3.5 py-0.5 rounded-md bg-secondary-fe;
 }
 
 .skill_be {
-  @apply px-3 py-0.5 rounded-sm bg-secondary-be;
+    @apply px-3.5 py-0.5 rounded-md bg-secondary-be;
 }
 
 .slide {
-  @apply w-96 h-60 bg-primary-point;
+    @apply w-96 h-60 bg-primary-point;
 }
 
 .list_disc_style {
-  @apply list-disc ml-2;
+    @apply list-disc ml-2;
 }
 
 .list_circle_style {
-  @apply list-circle ml-5;
+    @apply list-circle ml-5;
 }
 
 .list_decimal_style {
-  @apply list-decimal ml-2;
+    @apply list-decimal ml-2;
 }
 
 .title {
-  @apply text-2xl font-medium mt-6 mb-4 text-secondary-title;
+    @apply text-2xl font-medium mt-6 mb-4 text-secondary-title;
 }

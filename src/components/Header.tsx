@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useRecoilState } from "recoil";
-import { menuState, projectState } from "../recoil/atoms/menuState";
+import { menuState, projectState } from "../recoil/atoms/viewState";
 import { flushSync } from "react-dom";
 
 function Header(): JSX.Element {
     const [menu, setMenu] = useRecoilState(menuState);
     const [project, setProject] = useRecoilState(projectState);
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
-    const [isAnimating, setIsAnimating] = useState(false); // 애니메이션 중인지 여부
+    const [isAnimating, setIsAnimating] = useState(false);
     const modalBackgroundRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {

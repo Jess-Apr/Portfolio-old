@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
-import { menuState, projectState } from "../recoil/atoms/menuState";
+import { menuState, projectState } from "../recoil/atoms/viewState";
 import myPhoto from "../assets/images/myPhoto.png";
 import email from "../assets/images/email.png";
 import github from "../assets/images/github.png";
