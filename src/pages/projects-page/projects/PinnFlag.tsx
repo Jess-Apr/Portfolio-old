@@ -56,12 +56,22 @@ function PinnFlag(): JSX.Element {
             <h2 className="title">주요 작업 내용</h2>
             <ul className="flex flex-col ml-3 mb-7 text-lg gap-3">
                 <li className="list_disc_style">
-                    커뮤니티 게시판, 여행상품 판매 페이지, 관리자 페이지 등 30여
-                    장의 화면 구현
-                </li>
-                <li className="list_disc_style">
-                    백엔드 api 연동 작업 진행 (현재 회원가입/로그인, 게시글
-                    CRUD, 댓글 CRUD, 카테고리 조회 등 약 30% 연동 완료)
+                    프론트엔드 개발 전반을 주도하며 작업을 수행
+                    <ul className="flex flex-col gap-2 mt-2">
+                        <li className="list_circle_style pl-7">
+                            커뮤니티 게시판, 여행상품 판매 페이지, 관리자 페이지
+                            등 약 30여 개의 화면을 설계 및 구현
+                        </li>
+                        <li className="list_circle_style pl-7">
+                            클라이언트와 직접 소통하며 요구 사항을 반영하고,
+                            UI/UX 개선을 제안 및 적용하여 사용자 경험 최적화
+                        </li>
+                        <li className="list_circle_style pl-7">
+                            회원가입/로그인, 게시글 및 댓글 CRUD, 카테고리 조회
+                            등 주요 기능에 대한 백엔드 API 연동 작업 진행 (약
+                            30% 연동 완료)
+                        </li>
+                    </ul>
                 </li>
                 <li className="list_disc_style">
                     관심사 분리 원칙을 고려한 구조적 설계

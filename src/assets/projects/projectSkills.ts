@@ -10,6 +10,7 @@ export const pinnflagSkills = [
     "React",
     "Recoil",
     "styled-components",
+    "Jest",
 ];
 
 export const daygridFe = [
