@@ -84,7 +84,7 @@ function Header(): JSX.Element {
                         <p
                             className={`mb-3 ${
                                 project === "lin"
-                                    ? "text-primary-point"
+                                    ? "text-primary-point cursor-pointer"
                                     : "hover"
                             }`}
                             onClick={() => setProject("lin")}
@@ -94,7 +94,7 @@ function Header(): JSX.Element {
                         <p
                             className={`mb-3 ${
                                 project === "pin"
-                                    ? "text-primary-point"
+                                    ? "text-primary-point cursor-pointer"
                                     : "hover"
                             }`}
                             onClick={() => setProject("pin")}
@@ -104,7 +104,7 @@ function Header(): JSX.Element {
                         <p
                             className={`${
                                 project === "day"
-                                    ? "text-primary-point"
+                                    ? "text-primary-point cursor-pointer"
                                     : "hover"
                             }`}
                             onClick={() => setProject("day")}
