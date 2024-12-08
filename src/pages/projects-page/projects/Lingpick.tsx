@@ -61,24 +61,79 @@ function Lingpick(): JSX.Element {
                     어플리케이션의 UI를 변경 하는 고도화 작업 진행
                 </li>
                 <li className="list_disc_style">
-                    카카오톡 소셜 로그인 기능 구현
+                    카카오톡, 네이버, 구글, 메타 소셜 로그인 기능 구현
                 </li>
                 <li className="list_disc_style">
-                    무한 스크롤 기능 구현
+                    사용자 인터렉션 최적화
                     <ul className="flex flex-col gap-2 mt-2">
                         <li className="list_circle_style pl-7">
-                            Tanstack Query의 useInfiniteQuery를 사용하여 불러온
-                            데이터 캐싱
+                            <span className="font-semibold">문제: </span>좋아요
+                            버튼 클릭 시, 좋아요 수를 업데이트 하기 위해 무한
+                            스크롤의 모든 링크를 다시 불러오는 과정에서 딜레이
+                            발생
                         </li>
                         <li className="list_circle_style pl-7">
-                            FlatList의 renderItem 속성에 할당되는 컴포넌트 반환
-                            함수는 useCallback으로 메모이제이션하여 불필요한
-                            리렌더링 방지
+                            <span className="font-semibold">해결: </span>
+                            실시간 데이터 반영보다는 빠른 피드백이 중요하다고
+                            판단하여 Tanstack Query의 Optimistic Updates 기능을
+                            사용해 좋아요가 눌린 링크의 숫자만 변경
                         </li>
                         <li className="list_circle_style pl-7">
-                            리스트에서 아이템을 보여주는 컴포넌트에 React.memo를
-                            사용하여 각 아이템 데이터가 변하지 않은 경우엔
-                            리렌더링이 일어나지 않게 함
+                            <span className="font-semibold">성과: </span>
+                            <ul className="flex flex-col gap-2 mt-2">
+                                <li className="list_circle_style pl-7">
+                                    피드에서 좋아요 클릭 후 사용자 액션이
+                                    반응되기까지 기존{" "}
+                                    <span className="font-semibold">
+                                        1070ms에서 36ms로 개선
+                                    </span>
+                                </li>
+                                <li className="list_circle_style pl-7">
+                                    사용자 액션에 대한 요청을 서버에 보내지 않고
+                                    클라이언트에서 즉각적으로 처리하여{" "}
+                                    <span className="font-semibold">
+                                        서버 부하를 줄이고 리소스 소비 최적화
+                                    </span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li className="list_disc_style">
+                    무한스크롤 렌더링 최적화
+                    <ul className="flex flex-col gap-2 mt-2">
+                        <li className="list_circle_style pl-7">
+                            <span className="font-semibold">문제: </span>스크롤
+                            시 리스트의 모든 아이템이 재렌더링되어 성능 저하
+                            발생
+                        </li>
+                        <li className="list_circle_style pl-7">
+                            <span className="font-semibold">해결: </span>
+                            <ul className="flex flex-col gap-2 mt-2">
+                                <li className="list_circle_style pl-7">
+                                    TanStack Query의 useInfiniteQuery를 활용해
+                                    데이터를 캐싱하고, 페이지 단위로 추가
+                                    데이터를 병합하여 기존 데이터 참조 유지
+                                </li>
+                                <li className="list_circle_style pl-7">
+                                    FlatList의 keyExtractor로 고유키를 설정하여
+                                    리스트 내 변화가 있는 부분만 렌더링
+                                </li>
+                                <li className="list_circle_style pl-7">
+                                    renderItem을 useCallback으로 감싸 부모
+                                    컴포넌트 리렌더링 시 함수 참조를 유지해 하위
+                                    컴포넌트의 불필요한 렌더링 방지
+                                </li>
+                                <li className="list_circle_style pl-7">
+                                    리스트 항목 컴포넌트를 React.memo로 감싸
+                                    props 데이터 변경이 없는 경우 리렌더링을
+                                    방지
+                                </li>
+                            </ul>
+                        </li>
+                        <li className="list_circle_style pl-7">
+                            <span className="font-semibold">성과: </span>추가된
+                            아이템만 렌더링하도록 최적화해 무한스크롤 성능 개선
                         </li>
                     </ul>
                 </li>
@@ -103,6 +158,42 @@ function Lingpick(): JSX.Element {
                     </ul>
                 </li>
                 <li className="list_disc_style">
+                    검색 페이지 무한 로딩 문제 해결
+                    <ul className="flex flex-col gap-2 mt-2">
+                        <li className="list_circle_style pl-7">
+                            <span className="font-semibold">문제: </span>검색
+                            키워드 입력 후 스크롤 시 Masonry List의 커스텀
+                            태그에서 API 요청 스크롤 이벤트가 중복 발생하여 무한
+                            로딩 현상 발생
+                        </li>
+                        <li className="list_circle_style pl-7">
+                            <span className="font-semibold">원인: </span>Masonry
+                            List 구조는 열 높이가 달라 onEndReached가 각 열의
+                            끝을 계산하는 과정에서 스크롤 이벤트가 반복적으로
+                            트리거될 수 있음
+                        </li>
+                        <li className="list_circle_style pl-7">
+                            <span className="font-semibold">해결: </span>
+                            <ul className="flex flex-col gap-2 mt-2">
+                                <li className="list_circle_style pl-7">
+                                    Debouncing 함수를 구현하여 마지막 스크롤
+                                    이벤트 발생 후 200ms가 지나야 API 요청을
+                                    보내도록 설정
+                                </li>
+                                <li className="list_circle_style pl-7">
+                                    useInfiniteQuery의 isLoading 상태를 감지하여
+                                    로딩 중에는 추가 API 요청을 차단
+                                </li>
+                            </ul>
+                        </li>
+                        <li className="list_circle_style pl-7">
+                            <span className="font-semibold">성과: </span>중복
+                            API 요청을 방지하고 무한 로딩 문제를 해결해 검색
+                            페이지의 안정성과 성능 개선
+                        </li>
+                    </ul>
+                </li>
+                <li className="list_disc_style">
                     웹 크롤링 기능 구현
                     <ul className="flex flex-col gap-2 mt-2">
                         <li className="list_circle_style pl-7">
@@ -116,77 +207,6 @@ function Lingpick(): JSX.Element {
                     </ul>
                 </li>
             </ul>
-            <h2 className="title">문제 해결 경험</h2>
-            <div className="flex flex-col pb-7 text-lg gap-3">
-                <div className="font-medium">🚨 문제 상황 1</div>
-                <div className="mb-2">
-                    피드 페이지에서 ‘좋아요’ 버튼을 클릭했을 때, 사용자
-                    인터페이스의 피드백이 지연되는 문제가 발생
-                </div>
-                <div className="font-medium">💥 문제 원인</div>
-                <div className="mb-2">
-                    피드 페이지에서 링크 리스트를 한꺼번에 받아와 렌더링하는
-                    구조. ‘좋아요’ 버튼을 클릭할 때마다 전체 링크 리스트를
-                    업데이트하여 해당 링크의 ‘좋아요’ 수를 갱신하는 과정에서
-                    딜레이 발생.
-                </div>
-                <div className="font-medium">💡 해결 방법</div>
-                <ul className="flex flex-col gap-2">
-                    <li className="list-disc ml-5 pl-7">
-                        사용자 경험 측면에서 '좋아요' 수가 실시간으로 반영되는
-                        것 보다, 빠른 피드백이 더 중요하다고 판단
-                    </li>
-                    <li className="list-disc ml-5 pl-7">
-                        Tanstack Query의 setQueryData 메서드를 활용하여
-                        Optimistic Update 패턴을 적용. '좋아요' 버튼이 눌린
-                        링크의 좋아요 수만 클라이언트에서 즉시 업데이트함.
-                    </li>
-                    <li className="list-disc ml-5 pl-7">
-                        피드페이지에서 좋아요 클릭 시 사용자 액션 반응 시간을
-                        기존 <span className="font-semibold">1070ms</span>
-                        에서
-                        <span className="font-semibold">36ms</span>로 개선
-                    </li>
-                    <li className="list-disc ml-5 pl-7">
-                        '좋아요' 버튼뿐만 아니라, 사용자 프로필 사진 변경 등
-                        실시간 데이터 반영이 중요하지 않은 기능들에도 Optimistic
-                        Update 방식을 적용하여 서버 요청 없이 클라이언트에서
-                        업데이트함. 이를 통해{" "}
-                        <span className="font-semibold">서버 부하를 감소</span>
-                        시키고,{" "}
-                        <span className="font-semibold">
-                            리소스 소비를 최적화
-                        </span>
-                        함.
-                    </li>
-                </ul>
-                <div className="font-medium pt-5 mt-2 border-t-one">
-                    🚨 문제 상황 2
-                </div>
-                <div className="mb-2">
-                    검색 페이지에서 검색 키워드 입력 후 스크롤을 내리면 무한
-                    로딩이 발생
-                </div>
-                <div className="font-medium">💥 문제 원인</div>
-                <div className="mb-2">
-                    이미지를 각각 다른 사이즈로 보여주기 위해 적용한 Masonry
-                    List 라이브러리의 커스텀 태그에서 API 요청을 하는 스크롤
-                    이벤트가 중복 발생함. onEndReached 속성을 적용했지만, 높이가
-                    다른 각 열의 끝을 계산하는 과정에서 스크롤 이벤트가
-                    중복적으로 발생할 수 있음.
-                </div>
-                <div className="font-medium">💡 해결 방법</div>
-                <ul className="flex flex-col gap-2">
-                    <li className="list-disc ml-5 pl-7">
-                        Debouncing 함수를 구현하여 마지막 스크롤 이벤트가 발생한
-                        후 200ms가 지나야 API 요청을 보내도록 설정.
-                    </li>
-                    <li className="list-disc ml-5 pl-7">
-                        리스트를 불러오는 useInfiniteQuery의 isLoading 속성을
-                        감지하여 true일 경우에는 API 요청을 보내지 않도록 함.
-                    </li>
-                </ul>
-            </div>
         </div>
     );
 }
