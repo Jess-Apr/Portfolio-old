@@ -56,25 +56,28 @@ function PinnFlag(): JSX.Element {
             <h2 className="title">주요 작업 내용</h2>
             <ul className="flex flex-col ml-3 mb-7 text-lg gap-3">
                 <li className="list_disc_style">
-                    프론트엔드 개발 전반을 주도하며 작업을 수행
+                    <span className="font-semibold">
+                        프론트엔드 개발 전반을 주도
+                    </span>
+                    하며 작업을 수행
                     <ul className="flex flex-col gap-2 mt-2">
                         <li className="list_circle_style pl-7">
                             커뮤니티 게시판, 여행상품 판매 페이지, 관리자 페이지
                             등 약 30여 개의 화면을 설계 및 구현
                         </li>
                         <li className="list_circle_style pl-7">
-                            클라이언트와 직접 소통하며 요구 사항을 반영하고,
-                            UI/UX 개선을 제안 및 적용하여 사용자 경험 최적화
+                            회원가입/로그인, 게시글 및 댓글 CRUD, 카테고리 조회
+                            등 주요 기능에 대한 백엔드 API 연동 작업 진행
                         </li>
                         <li className="list_circle_style pl-7">
-                            회원가입/로그인, 게시글 및 댓글 CRUD, 카테고리 조회
-                            등 주요 기능에 대한 백엔드 API 연동 작업 진행 (약
-                            30% 연동 완료)
+                            클라이언트와 직접 소통하며 요구 사항을 반영하고,
+                            UI/UX 개선을 제안 및 적용하여 사용자 경험 최적화
                         </li>
                     </ul>
                 </li>
                 <li className="list_disc_style">
-                    관심사 분리 원칙을 고려한 구조적 설계
+                    <span className="font-semibold">관심사 분리 원칙</span>을
+                    고려한 구조적 설계
                     <ul className="flex flex-col gap-2 mt-2">
                         <li className="list_circle_style pl-7">
                             MVVM 패턴을 적용하여 뷰 로직과 비즈니스 로직을 분리
@@ -103,10 +106,12 @@ function PinnFlag(): JSX.Element {
                     </ul>
                 </li>
                 <li className="list_disc_style">
-                    Jest를 사용하여 ViewModel과 Model 레이어의 단위 테스트 수행
+                    Jest를 사용하여 ViewModel과 Model 레이어의{" "}
+                    <span className="font-semibold">단위 테스트 수행</span>
                 </li>
                 <li className="list_disc_style">
-                    i18next 라이브러리를 사용하여 다국어 지원 기능 제공
+                    i18next 라이브러리를 사용하여{" "}
+                    <span className="font-semibold">다국어 지원 기능 제공</span>
                     <ul className="flex flex-col gap-2 mt-2">
                         <li className="list_circle_style pl-7">
                             각 언어에 대응하는 키-언어 쌍을 가진 JSON 번역
@@ -116,6 +121,44 @@ function PinnFlag(): JSX.Element {
                         <li className="list_circle_style pl-7">
                             언어 전환 시에도 일관된 UI/UX를 제공하여 글로벌
                             사용자 경험 최적화
+                        </li>
+                    </ul>
+                </li>
+                <li className="list_disc_style">
+                    개발자가 아닌 클라이언트와의{" "}
+                    <span className="font-semibold">
+                        원활한 소통을 위한 시각적 자료 제작
+                    </span>
+                    <ul className="flex flex-col gap-2 mt-2">
+                        <li className="list_circle_style pl-7">
+                            UI 수정을 제안할 때 Figma로 수정 사항이 적용된
+                            화면을 그린 후 제안 사항과 함께 전달
+                        </li>
+                        <li className="list_circle_style pl-7">
+                            복잡한 코드의 흐름을 플로우 차트로 제작하여 코드를
+                            더욱 쉽게 이해할 수 있도록 함
+                        </li>
+                    </ul>
+                </li>
+                <li className="list_disc_style">
+                    효율적인 협업을 위한{" "}
+                    <span className="font-semibold">
+                        작업 우선순위 문서화 도입 및 적용
+                    </span>
+                    <ul className="flex flex-col gap-2 mt-2">
+                        <li className="list_circle_style pl-7">
+                            클라이언트, 프론트엔드, 백엔드 간 우선순위 불일치로
+                            인한 작업 지연 문제를 해결하기 위해 문서화 프로세스
+                            제안 및 실행
+                        </li>
+                        <li className="list_circle_style pl-7">
+                            Google Docs를 활용해 구성원들이 각자의 작업
+                            우선순위를 공유하고, 주간 미팅에서 이를 기반으로
+                            작업 순서 조정 및 진행 상황 점검
+                        </li>
+                        <li className="list_circle_style pl-7">
+                            클라이언트와 약속된 기능의 누락을 줄이고, 개발 진행
+                            속도를 향상시켜 마일스톤 목표를 안정적으로 달성
                         </li>
                     </ul>
                 </li>

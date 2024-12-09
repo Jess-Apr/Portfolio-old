@@ -58,11 +58,65 @@ function Lingpick(): JSX.Element {
             <ul className="flex flex-col ml-3 mb-7 text-lg gap-3">
                 <li className="list_disc_style">
                     기존에 만들어진 어플리케이션의 퍼포먼스 개선, 기능 추가,
-                    어플리케이션의 UI를 변경 하는 고도화 작업 진행
+                    어플리케이션의 UI를 변경하는 고도화 작업 진행
                 </li>
                 <li className="list_disc_style">
                     카카오톡, 네이버, 구글, 메타 소셜 로그인 기능 구현
                 </li>
+                <li className="list_disc_style">
+                    S3 이미지 업로드 로직 구현
+                    <ul className="flex flex-col gap-2 mt-2">
+                        <li className="list_circle_style pl-7">
+                            서버에서 S3 업로드 URL을 받아 이미지를 업로드한 뒤,
+                            성공 시 S3로부터 받은 이미지 ID를 서버로 전송
+                        </li>
+                    </ul>
+                </li>
+                <li className="list_disc_style">
+                    웹 크롤링 기능 구현
+                    <ul className="flex flex-col gap-2 mt-2">
+                        <li className="list_circle_style pl-7">
+                            Swift, Kotlin 코드로 구현되어있던 크롤링 기능을
+                            <span className="font-semibold">
+                                타입스크립트 코드로 통합하여 유지보수성 높임
+                            </span>
+                        </li>
+                        <li className="list_circle_style pl-7">
+                            Cheerio 라이브러리를 사용하여 링크 데이터(제목,
+                            내용, 위치, 이미지, 카테고리) 크롤링
+                        </li>
+                    </ul>
+                </li>
+                <li className="list_disc_style">
+                    링크 공유 기능 구현 (Android)
+                    <ul className="flex flex-col gap-2 mt-2">
+                        <li className="list_circle_style pl-7">
+                            앱 전환 없이 링크 저장 UI를 호출할 수 있도록 별도의
+                            Activity를 Kotlin으로 구현
+                        </li>
+                        <li className="list_circle_style pl-7">
+                            React Native의{" "}
+                            <span className="font-semibold">Native Module</span>{" "}
+                            기능을 활용, 네이티브 코드에서 받은 데이터를 React
+                            Native로 전송하여 타입스크립트 기뱐의 웹 크롤링
+                            로직을 거칠 수 있도록 함
+                        </li>
+                        <li className="list_circle_style pl-7">
+                            링크 저장 페이지는 바텀시트 UI 스타일로 설계하여
+                            사용자가 익숙하고 자연스러운 경험을 느낄 수 있도록
+                            디자인
+                        </li>
+                        <li className="list_circle_style pl-7">
+                            사용자가 외부 어플리케이션의 링크를 저장하려 할 때,
+                            Lingpick 앱으로 이동하지 않고 바로 저장 할 수 있도록
+                            하여 사용자의 작업 흐름을 방해하지 않으면서도
+                            직관적이고 원활한 앱 사용 경험 제공
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <h2 className="title">기능 개선</h2>
+            <ul className="flex flex-col ml-3 mb-7 text-lg gap-3">
                 <li className="list_disc_style">
                     사용자 인터렉션 최적화
                     <ul className="flex flex-col gap-2 mt-2">
@@ -132,28 +186,10 @@ function Lingpick(): JSX.Element {
                             </ul>
                         </li>
                         <li className="list_circle_style pl-7">
-                            <span className="font-semibold">성과: </span>추가된
-                            아이템만 렌더링하도록 최적화해 무한스크롤 성능 개선
-                        </li>
-                    </ul>
-                </li>
-                <li className="list_disc_style">
-                    외부 어플리케이션에서 링크 공유 버튼 클릭 시, 사용자가
-                    Lingpick 어플리케이션으로 이동하지 않고 바로 링크 저장 할 수
-                    있는 기능 구현 (Android)
-                    <ul className="flex flex-col gap-2 mt-2">
-                        <li className="list_circle_style pl-7">
-                            Kotlin으로 별도의 Activity를 생성하여 앱 전환 없이
-                            특정 UI 호출
-                        </li>
-                        <li className="list_circle_style pl-7">
-                            React Native의 Native Module 기능을 활용하여
-                            네이티브 코드로 받은 데이터를 타입스크립트 코드로
-                            전송
-                        </li>
-                        <li className="list_circle_style pl-7">
-                            링크 저장 페이지는 바텀시트처럼 디자인하여
-                            자연스러운 사용자 경험 제공
+                            <span className="font-semibold">
+                                성과: 추가된 아이템만 렌더링하도록 최적화
+                            </span>
+                            해 무한스크롤 성능 개선
                         </li>
                     </ul>
                 </li>
@@ -190,19 +226,6 @@ function Lingpick(): JSX.Element {
                             <span className="font-semibold">성과: </span>중복
                             API 요청을 방지하고 무한 로딩 문제를 해결해 검색
                             페이지의 안정성과 성능 개선
-                        </li>
-                    </ul>
-                </li>
-                <li className="list_disc_style">
-                    웹 크롤링 기능 구현
-                    <ul className="flex flex-col gap-2 mt-2">
-                        <li className="list_circle_style pl-7">
-                            Swift, Kotlin 코드로 구현되어있던 크롤링 기능을
-                            타입스크립트 코드 하나로 통합하여 유지보수성 높임
-                        </li>
-                        <li className="list_circle_style pl-7">
-                            Cheerio 라이브러리를 사용하여 링크 데이터(제목,
-                            내용, 위치, 이미지, 카테고리) 크롤링
                         </li>
                     </ul>
                 </li>

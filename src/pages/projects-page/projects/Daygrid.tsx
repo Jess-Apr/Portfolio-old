@@ -252,8 +252,14 @@ function Daygrid(): JSX.Element {
                         별도의 프로세스로 분리함
                     </li>
                     <li className="list-disc ml-5 pl-7">
-                        npm run build 속도: 17.84초 -&gt; 8.56초, npm start
-                        속도: 10.62초 -&gt; 6.62초
+                        npm run build 속도:{" "}
+                        <span className="font-semibold">
+                            17.84초 -&gt; 8.56초
+                        </span>
+                        , npm start 속도:{" "}
+                        <span className="font-semibold">
+                            10.62초 -&gt; 6.62초
+                        </span>
                     </li>
                 </ul>
             </div>
