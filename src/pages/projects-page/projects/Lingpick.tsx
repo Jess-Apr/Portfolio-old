@@ -3,20 +3,6 @@ import Slider from "../../../components/Slider";
 import { lingpickSkills } from "../../../assets/projects/projectSkills";
 
 function Lingpick(): JSX.Element {
-    const [skillState, setSkillsState] = useState<boolean>(false);
-    const [visibilityAnimation, setVisibilityAnimation] =
-        useState<boolean>(false);
-
-    useEffect(() => {
-        if (skillState) {
-            setVisibilityAnimation(true);
-        } else {
-            setTimeout(() => {
-                setVisibilityAnimation(false);
-            }, 500);
-        }
-    }, [skillState]);
-
     return (
         <div className="flex flex-col px-3">
             <div className="mt-8">
@@ -59,6 +45,9 @@ function Lingpick(): JSX.Element {
                 <li className="list_disc_style">
                     기존에 만들어진 어플리케이션의 퍼포먼스 개선, 기능 추가,
                     어플리케이션의 UI를 변경하는 고도화 작업 진행
+                </li>
+                <li className="list_disc_style">
+                    Android 개발 환경 설정 및 빌드 환경 분리
                 </li>
                 <li className="list_disc_style">
                     카카오톡, 네이버, 구글, 메타 소셜 로그인 기능 구현
