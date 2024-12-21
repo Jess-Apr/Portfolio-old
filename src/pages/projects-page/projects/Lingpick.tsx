@@ -50,7 +50,7 @@ function Lingpick(): JSX.Element {
                     Android 개발 환경 설정 및 빌드 환경 분리
                 </li>
                 <li className="list_disc_style">
-                    카카오톡, 네이버, 구글, 메타 소셜 로그인 기능 구현
+                    카카오톡, 네이버, 구글, 메타, 애플 소셜 로그인 기능 구현
                 </li>
                 <li className="list_disc_style">
                     S3 이미지 업로드 로직 구현
