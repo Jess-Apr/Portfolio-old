@@ -1,7 +1,7 @@
 # Jessie's Web Portfolio
 
 제가 진행했던 프로젝트들을 담은 웹 포트폴리오 입니다.<br/><br/>
-<strong>배포주소</strong><br/> https://jess-apr.github.io/Portfolio/<br/>
+<strong>배포주소</strong><br/> [https://jess-apr.github.io/Portfolio-old](https://jess-apr.github.io/Portfolio-old/)<br/>
 <br/>
 
 ## ⚙️ 기술 스택
